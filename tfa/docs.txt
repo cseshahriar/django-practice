@@ -1,3 +1,0 @@
-account_sid = 'ACea3e56b5d026e200c5ba7aa9f127db3b'
-auth_token = '387cab95610b27bbff192fb7c3fc2668'
-from_='+15622685529',
