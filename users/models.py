@@ -35,7 +35,7 @@ class MyUserManager(BaseUserManager):
 
 
 class CustomUser(AbstractBaseUser):
-    phone_number = models.CharField(max_length=12)
+    phone_number = models.CharField(max_length=14)
     email = models.EmailField(
         verbose_name='email address',
         max_length=255,
