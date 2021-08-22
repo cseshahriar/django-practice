@@ -1,0 +1,2 @@
+# Practical-Django
+Pet projects
