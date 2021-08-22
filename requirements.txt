@@ -36,7 +36,7 @@ cairocffi==1.2.0
 CairoSVG==2.5.2
 certifi==2020.4.5.1
 cffi==1.14.5
-chardet @ file:///tmp/build/80754af9/chardet_1607706746162/work
+chardet==3.0.4
 click @ file:///home/linux1/recipes/ci/click_1610990599742/work
 cloudpickle @ file:///tmp/build/80754af9/cloudpickle_1598884132938/work
 clyent==1.2.2
@@ -207,6 +207,7 @@ pydocstyle @ file:///tmp/build/80754af9/pydocstyle_1616182067796/work
 pyerfa @ file:///tmp/build/80754af9/pyerfa_1619390903914/work
 pyflakes==2.2.0
 Pygments @ file:///tmp/build/80754af9/pygments_1615143339740/work
+PyJWT==1.7.1
 pylint==2.8.2
 pyls-black @ file:///tmp/build/80754af9/pyls-black_1607553132291/work
 pyls-spyder @ file:///tmp/build/80754af9/pyls-spyder_1613849700860/work
@@ -282,6 +283,7 @@ toolz @ file:///home/linux1/recipes/ci/toolz_1610987900194/work
 tornado @ file:///tmp/build/80754af9/tornado_1606942300299/work
 tqdm @ file:///tmp/build/80754af9/tqdm_1615925068909/work
 traitlets @ file:///home/ktietz/src/ci/traitlets_1611929699868/work
+twilio==6.63.0
 typed-ast @ file:///tmp/build/80754af9/typed-ast_1610484547928/work
 typing-extensions @ file:///home/ktietz/src/ci_mi/typing_extensions_1612808209620/work
 ujson @ file:///tmp/build/80754af9/ujson_1611259522456/work
