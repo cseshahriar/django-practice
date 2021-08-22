@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # third party
+    'crispy_forms',
+
     # custom apps
     'users.apps.UsersConfig',
     'tfa.apps.TfaConfig',
@@ -129,3 +132,4 @@ LOGIN_URL = '/logn/'
 # default accounts/login
 
 AUTH_USER_MODEL = 'users.CustomUser'
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

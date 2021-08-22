@@ -1,0 +1,22 @@
+{% extends 'tfa/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Auth Page{% endblock %}
+
+{% block content %} 
+<div class="container py-5">
+    <div class="row">
+        <div class="col-4">
+            <form action="" method="POST" autocomplete="off">
+                {% csrf_token %}
+                {{ form|crispy}}
+                {{ form.errors }}
+                
+                <div class="form-group mt-2">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div> 
+</div>
+{% endblock %}
