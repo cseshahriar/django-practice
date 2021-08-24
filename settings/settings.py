@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     # custom apps
     'users.apps.UsersConfig',
     'tfa.apps.TfaConfig',
-    'barcode.apps.BarcodeConfig',
+    'barcodeapp.apps.BarcodeappConfig',
 ]
 
 MIDDLEWARE = [
