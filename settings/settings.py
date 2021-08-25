@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # third party
     'crispy_forms',
+    'django_cleanup',
 
     # custom apps
     'users.apps.UsersConfig',

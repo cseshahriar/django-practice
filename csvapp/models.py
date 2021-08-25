@@ -20,13 +20,13 @@ PRODUCT_CHOICES = (
 class Sale(models.Model):
     product = models.CharField(max_length=200, choices=PRODUCT_CHOICES)
     salesman = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    quantitty = models.PositiveIntegerField()
+    quantity = models.PositiveIntegerField()
     total = models.FloatField(blank=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.product}-{self.quantitty}"
+        return f"{self.product}-{self.quantity}"
 
     def save(self, *args, **kwargs):
         price = None
@@ -40,5 +40,5 @@ class Sale(models.Model):
         else:
             pass
 
-        self.total = price * self.quantitty
+        self.total = price * self.quantity
         super().save(*args, **kwargs)
