@@ -12,9 +12,9 @@ class CsvModel(models.Model):
 
 
 PRODUCT_CHOICES = (
-    ('TV', 'IV'),
-    ('IPAD', 'Ipad'),
-    ('PLAYSTATION', 'Playstation'),
+    ('TV', 'tv'),
+    ('IPAD', 'ipad'),
+    ('PLAYSTATION', 'playstation'),
 )
 
 class Sale(models.Model):

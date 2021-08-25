@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}CSV File Upload {% endblock %}
+
+{% block content %} 
+<div class="container py-5">
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <h2 class="mb-3">CSV File Upload Form</h2>
+                        {% csrf_token %}
+                        {{ form|crispy}}
+                        <div class="form-group mt-3">
+                            <button type="submit" class="btn btn-info">Confirm</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+{% endblock %}
+
+{% block scripts %}
+    <script src="semantic/dist/semantic.min.js"></script>
+{% endblock %}
