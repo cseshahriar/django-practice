@@ -26,7 +26,7 @@ def student_list(request):
 
 def filtered_student_list(request):
     """ or query """
-    # sql like 
+    # sql or query
     student_list = Student.objects.filter(
         Q(surname__startswith='Murol') | Q(surname__startswith='Sarker')
     )
@@ -35,9 +35,24 @@ def filtered_student_list(request):
 
 
 def student_and_query(request):
-    # sql like 
+    # sql and query
     student_list = Student.objects.filter(
         Q(surname__startswith='Murol') & Q(age__gte=27)
     )
     print(student_list)
     return render(request, 'djorm/student_list.html', {'student_list': student_list})
+
+
+def student_union_query(request):
+     # student with teacher union query
+    student_list = Student.objects.all().values_list('first_name').union(Teacher.objects.all().values_list('first_name'))
+    print(student_list)
+    print(student_list.query)
+    print(connection.queries)
+    """ 
+    SELECT "djorm_student"."first_name" FROM "djorm_student" UNION SELECT "djorm_teacher"."first_name" FROM "djorm_teacher"
+
+    [{'sql': 'SELECT "djorm_student"."first_name" FROM "djorm_student" 
+    NION SELECT "djorm_teacher"."first_name" FROM "djorm_teacher" LIMIT 21', 'time': '0.001'}]
+    """
+    return render(request, 'djorm/union_student_list.html', {'student_list': student_list})
