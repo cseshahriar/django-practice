@@ -6,7 +6,6 @@ from tfa.forms import CodeForm
 from users.models import CustomUser
 from .utils import send_sms
 
-@login_required
 def home_view(request):
     context = {}
     return render(request, 'tfa/home.html', context)
