@@ -4,6 +4,7 @@ from django.db import connection
 from django.db.models import Q
 
 def student_list(request):
+    """ get all """
     student_list = Student.objects.all()
     print('object list ',student_list)
     """<QuerySet [<Student: Shahriar Murol>]>"""
@@ -24,6 +25,7 @@ def student_list(request):
 
 
 def filtered_student_list(request):
+    """ or query """
     # sql like 
     student_list = Student.objects.filter(
         Q(surname__startswith='Murol') | Q(surname__startswith='Sarker')
@@ -32,3 +34,10 @@ def filtered_student_list(request):
     return render(request, 'djorm/student_list.html', {'student_list': student_list})
 
 
+def student_and_query(request):
+    # sql like 
+    student_list = Student.objects.filter(
+        Q(surname__startswith='Murol') & Q(age__gte=27)
+    )
+    print(student_list)
+    return render(request, 'djorm/student_list.html', {'student_list': student_list})
