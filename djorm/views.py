@@ -56,3 +56,20 @@ def student_union_query(request):
     NION SELECT "djorm_teacher"."first_name" FROM "djorm_teacher" LIMIT 21', 'time': '0.001'}]
     """
     return render(request, 'djorm/union_student_list.html', {'student_list': student_list})
+
+
+def student_not_query(request):
+    student_list = Student.objects.exclude(
+        Q(age=26) |
+        Q(surname__startswith='Murol')
+    ) # where not age = 21
+    print(student_list.query)
+    print(connection.queries)
+    # filter(age_get=18)
+    # filter(age_lte=60)
+    """
+    SELECT "djorm_student"."id", "djorm_student"."first_name", "djorm_student"."surname",
+    "djorm_student"."age", "djorm_student"."classroom", "djorm_student"."teacher" FROM 
+    "djorm_student" WHERE NOT (("djorm_student"."age" = 26 OR "djorm_student"."surname" LIKE Murol% ESCAPE '
+    """
+    return render(request, 'djorm/union_student_list.html', {'student_list': student_list})

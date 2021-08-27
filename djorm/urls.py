@@ -4,6 +4,7 @@ from .views import (
     filtered_student_list,
     student_and_query,
     student_union_query,
+    student_not_query
 )
 
 urlpatterns = [
@@ -11,4 +12,5 @@ urlpatterns = [
     path('or/student/list', filtered_student_list, name='or_student_list'),
     path('and/student/list', student_and_query, name='and_student_list'),
     path('union/student/list', student_union_query, name='union_student_list'),
+    path('not/student/list', student_not_query, name='not_student_list'),
 ]
