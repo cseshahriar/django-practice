@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'tfa.apps.TfaConfig',
     'barcodeapp.apps.BarcodeappConfig',
     'csvapp.apps.CsvappConfig',
+    'djorm.apps.DjormConfig',
 ]
 
 MIDDLEWARE = [
