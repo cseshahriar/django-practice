@@ -19,9 +19,23 @@ class Student(models.Model):
         return f'{self.first_name} {self.surname}'
 
 
-""" 3 django inheritance options """
+# Multiple model inheritance
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    created = models.DateTimeField(auto_now_add=True)
 
-# Abstract Model
+
+class ISBN(Book):
+    book_ptr = models.OneToOneField(
+        Book,
+        on_delete=models.CASCADE,
+        parent_link=True,
+        primary_key=True
+    )
+    ISBN = models.CharField(max_length=100)
+
+
+# Abstract Model inheritance
 class BaseItem(models.Model):
     """ base class """
     title = models.CharField(max_length=255)
@@ -47,3 +61,23 @@ class ItemB(BaseItem): # single inheritance
 
 class ItemC(BaseItem): # single inheritance
     slug = models.SlugField(max_length=255, unique=True)
+
+
+# proxy model inheritance
+class BookContent(models.Model):
+    title = models.CharField(max_length=255)
+    created = models.DateTimeField(auto_now_add=True)
+
+class BookOrders(BookContent):
+    """ 
+    proxy model
+    creating a proxy for the original model. 
+    actualy overriting base class functionality
+    """
+
+    class Meta:
+        proxy = True
+        ordering = ['-created']
+
+    def created_on(self):
+        return timezone.now() - self.created
