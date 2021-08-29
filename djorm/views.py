@@ -98,3 +98,16 @@ def simple_raw_query(request):
     # """)
 
     return render(request, 'djorm/simple_raw_qs.html', {'object_list': object_list})
+
+
+def custom_sql_qs(request):
+    """ custom sql query fetchone, fetchall, dictfetchall()"""
+    with connection.cursor() as cursor:
+        cursor = connection.cursor()
+        # cursor.execute("SELECT count(*) from djorm_student")
+        cursor.execute("SELECT * from djorm_student")
+        # studen_count = cursor.fetchone()
+        # {'studen_count': studen_count}
+        object_list = cursor.fetchall()
+        print(object_list) 
+    return render(request, 'djorm/custom_raw_qs.html', {'object_list': object_list})
