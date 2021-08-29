@@ -20,12 +20,15 @@ class Student(models.Model):
 
 
 # Multiple model inheritance
+class Article(models.Model):
+    article_id = models.AutoField(primary_key=True)
+
 class Book(models.Model):
     title = models.CharField(max_length=100)
     created = models.DateTimeField(auto_now_add=True)
 
 
-class ISBN(Book):
+class ISBN(Book, Article):
     book_ptr = models.OneToOneField(
         Book,
         on_delete=models.CASCADE,
