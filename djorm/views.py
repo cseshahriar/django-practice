@@ -73,3 +73,14 @@ def student_not_query(request):
     "djorm_student" WHERE NOT (("djorm_student"."age" = 26 OR "djorm_student"."surname" LIKE Murol% ESCAPE '
     """
     return render(request, 'djorm/union_student_list.html', {'student_list': student_list})
+
+def select_output_individual_fiends(request):
+    object_list = Student.objects.filter(classroom=1).only('first_name', 'age')
+    print(object_list.query)
+    print(connection.queries)
+    """
+    SELECT "djorm_student"."id", "djorm_student"."first_name", "djorm_student"."age"
+    FROM "djorm_student" WHERE "djorm_student"."classroom" = 1
+    """
+
+    return render(request, 'djorm/select_induvisual_fiend.html', {'object_list': object_list})
