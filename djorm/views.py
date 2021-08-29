@@ -100,6 +100,14 @@ def simple_raw_query(request):
     return render(request, 'djorm/simple_raw_qs.html', {'object_list': object_list})
 
 
+def dictfetchall(cursor):
+    "Return all rows from a cursor as a dict"
+    columns = [col[0] for col in cursor.description]
+    return [
+        dict(zip(columns, row))
+        for row in cursor.fetchall()
+    ]
+
 def custom_sql_qs(request):
     """ custom sql query fetchone, fetchall, dictfetchall()"""
     with connection.cursor() as cursor:
@@ -108,6 +116,7 @@ def custom_sql_qs(request):
         cursor.execute("SELECT * from djorm_student")
         # studen_count = cursor.fetchone()
         # {'studen_count': studen_count}
-        object_list = cursor.fetchall()
+        # object_list = cursor.fetchall()
+        object_list = dictfetchall(cursor)
         print(object_list) 
     return render(request, 'djorm/custom_raw_qs.html', {'object_list': object_list})

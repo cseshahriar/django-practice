@@ -21,9 +21,9 @@
                     <tbody>
                         {% for object in object_list %}
                         <tr>
-                            <th scope="row">{{ object.0 }}</th>
-                            <td>{{ object.1 }}</td>
-                            <td>{{ object.3 }}</td>
+                            <th scope="row">{{ object.id }}</th>
+                            <td>{{ object.first_name }}</td>
+                            <td>{{ object.age }}</td>
                             <td>
                                 <a href="" class="btn btn-primary btn-sm">Edit</a>
                             </td>
