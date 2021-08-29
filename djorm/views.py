@@ -83,4 +83,19 @@ def select_output_individual_fiends(request):
     FROM "djorm_student" WHERE "djorm_student"."classroom" = 1
     """
 
-    return render(request, 'djorm/select_induvisual_fiend.html', {'object_list': object_list})
+    return render(request, 'djorm/select_individual_fiend.html', {'object_list': object_list})
+
+
+
+def simple_raw_query(request):
+    # object_list = Student.objects.raw("SELECT * FROM djorm_student")
+    object_list = Student.objects.raw("SELECT * FROM djorm_student WHERE age=27")
+    
+    # object_list = Student.objects.raw(""" 
+    # SELECT "djorm_student"."id", "djorm_student"."first_name", 
+    # "djorm_student"."age" FROM "djorm_student" 
+    # """)
+
+    print(object_list.query)
+    print(connection.queries)
+    return render(request, 'djorm/simple_raw_qs.html', {'object_list': object_list})

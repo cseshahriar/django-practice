@@ -5,7 +5,8 @@ from .views import (
     student_and_query,
     student_union_query,
     student_not_query,
-    select_output_individual_fiends
+    select_output_individual_fiends,
+    simple_raw_query
 )
 
 urlpatterns = [
@@ -15,4 +16,5 @@ urlpatterns = [
     path('union/student/list', student_union_query, name='union_student_list'),
     path('not/student/list', student_not_query, name='not_student_list'),
     path('only/student/list', select_output_individual_fiends, name='only_student_list'),
+    path('simple/raw/student/list', simple_raw_query, name='simple_raw_student_list'),
 ]
