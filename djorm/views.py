@@ -3,6 +3,25 @@ from djorm.models import Student, Teacher
 from django.db import connection
 from django.db.models import Q
 
+""" orm properties:
+    exact, iexact
+    contains, icontains
+    in, gt, gte, lt, lte
+    startswith
+    isstartswith
+    endswith
+    iendswith
+    range
+    year
+    month
+    day
+    week_day
+    isnull
+    search
+    regex
+    iregex
+"""
+
 def student_list(request):
     """ get all """
     student_list = Student.objects.all()
@@ -109,7 +128,9 @@ def dictfetchall(cursor):
     ]
 
 def custom_sql_qs(request):
-    """ custom sql query fetchone, fetchall, dictfetchall()"""
+    """ 
+    custom sql query fetchone, fetchall, dictfetchall()
+    """
     with connection.cursor() as cursor:
         cursor = connection.cursor()
         # cursor.execute("SELECT count(*) from djorm_student")
