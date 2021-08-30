@@ -147,4 +147,29 @@ def custom_sql_qs(request):
 def product_all(request):
     # products = Product.objects.all() # 11 qs
     products = Product.objects.all().select_related('productbook', 'cupboard') # 1 qs
+    """
+    SELECT "djorm_product"."id",
+       "djorm_product"."title",
+       "djorm_product"."description",
+       "djorm_product"."image",
+       "djorm_product"."slug",
+       "djorm_product"."price",
+       "djorm_product"."in_stock",
+       "djorm_product"."is_active",
+       "djorm_product"."created",
+       "djorm_product"."updated",
+       "djorm_productbook"."product_ptr_id",
+       "djorm_productbook"."publisher",
+       "djorm_productbook"."author",
+       "djorm_cupboard"."product_ptr_id",
+       "djorm_cupboard"."shelves",
+       "djorm_cupboard"."author"
+        FROM "djorm_product"
+        LEFT OUTER JOIN "djorm_productbook"
+            ON ("djorm_product"."id" = "djorm_productbook"."product_ptr_id")
+        LEFT OUTER JOIN "djorm_cupboard"
+            ON ("djorm_product"."id" = "djorm_cupboard"."product_ptr_id")
+        WHERE "djorm_product"."is_active"
+        ORDER BY "djorm_product"."created" DESC
+    """
     return render(request, 'djorm/product_all.html', {'products': products})
