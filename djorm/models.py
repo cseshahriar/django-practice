@@ -2,6 +2,9 @@ from django.db import models
 from django.utils import timezone
 from django.urls import reverse
 from users.models import CustomUser
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.contenttypes.fields import GenericForeignKey
+
 
 class Teacher(models.Model):
     first_name = models.CharField(max_length=100)
@@ -130,5 +133,45 @@ class ProductBook(Product):
     author = models.CharField(max_length=255)
 
 class Cupboard(Product):
+    shelves = models.IntegerField()
+    author = models.CharField(max_length=255)
+
+
+# GenericForeignKey
+class ProductClass(models.Model):
+    content_type = models.ForeignKey(
+        ContentType, on_delete=models.CASCADE,
+        limit_choices_to={'model__in': ('bookmodel', 'cupboardmodel')}
+    )
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey('content_type', 'object_id')
+
+
+class ProductBase(models.Model):
+    title = models.CharField(max_length=255, unique=True)
+    description = models.TextField(blank=True)
+    image = models.ImageField(upload_to='images/', default='images/default.png')
+    slug = models.SlugField(max_length=255, unique=True)
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+    in_stock = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    objects = ProductManager() # custom manager
+    
+    class Meta:
+        abstract = True
+        ordering = ['-created']
+
+    def __str__(self):
+        return self.title
+
+
+class BookModel(ProductBase):
+    publisher = models.CharField(max_length=255)
+    author = models.CharField(max_length=255)
+
+class CupboardModel(ProductBase):
     shelves = models.IntegerField()
     author = models.CharField(max_length=255)
