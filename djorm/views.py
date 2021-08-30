@@ -207,12 +207,12 @@ def process_payment(request):
             # All operations should be executed
 
             # sender, transaction problem can be here
-            payor = Customer.objects.get(name=input_payor)
+            payor = Customer.objects.select_for_update.get(name=input_payor)
             payor.balance -= input_amount
             payor.save()
 
             # receiver, transact problem can be hrere
-            payee = Customer.objects.get(name=input_payee)
+            payee = Customer.objects.select_for_update.get(name=input_payee)
             payee.balance += input_amount
             payee.save()
 
