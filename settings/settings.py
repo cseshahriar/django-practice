@@ -38,6 +38,7 @@ INTERNAL_IPS = INTERNAL_IPS  # local_settings.py
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'polymorphic',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',

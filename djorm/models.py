@@ -4,6 +4,7 @@ from django.urls import reverse
 from users.models import CustomUser
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
+from polymorphic.models import PolymorphicModel
 
 
 class Teacher(models.Model):
@@ -186,3 +187,24 @@ class CupboardModel(ProductBase):
         related_name="cupboardmodel",
         related_query_name='cupboardmodel'
     )
+
+# django polymorphic
+class Project(PolymorphicModel):
+    title = models.CharField(max_length=255, unique=True)
+    description = models.TextField(blank=True)
+    image = models.ImageField(upload_to='images/', default='images/default.png')
+    slug = models.SlugField(max_length=255, unique=True)
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+    in_stock = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+
+class ArtProject(Project):
+    publisher = models.CharField(max_length=255)
+    author = models.CharField(max_length=255)
+
+class ResearchProject(Project):
+    shelves = models.IntegerField()
+    author = models.CharField(max_length=255)
