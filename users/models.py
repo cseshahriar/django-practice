@@ -13,7 +13,8 @@ class MyUserManager(BaseUserManager):
             raise ValueError('Users must have an email address')
 
         user = self.model(
-            email=self.normalize_email(email)
+            email=self.normalize_email(email),
+            date_of_birth=date_of_birth
         )
 
         user.set_password(password)
@@ -27,6 +28,7 @@ class MyUserManager(BaseUserManager):
         """
         user = self.create_user(
             email,
+            date_of_birth=date_of_birth,
             password=password
         )
         user.is_admin = True

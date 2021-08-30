@@ -9,7 +9,7 @@ class Teacher(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.surname}'
-
+ 
 class Student(models.Model):
     first_name = models.CharField(max_length=100)
     surname = models.CharField(max_length=100)
@@ -106,10 +106,29 @@ class Category(models.Model):
         return self.name
 
 class Product(models.Model):
-    category = models.ForeignKey(Category, related_name='product', on_delete=models.CASCADE)
-    created_by = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    title = models.CharField(max_length=255)
-    author = models.CharField(max_length=255, default='admin')
+    title = models.CharField(max_length=255, unique=True)
     description = models.TextField(blank=True)
+    image = models.ImageField(upload_to='images/', default='images/default.png')
+    slug = models.SlugField(max_length=255, unique=True)
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+    in_stock = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
     objects = ProductManager() # custom manager
+    
+    class Meta:
+        verbose_name_plural = 'products'
+        ordering = ['-created']
+
+    def __str__(self):
+        return self.title
+
+class ProductBook(Product):
+    publisher = models.CharField(max_length=255)
+    author = models.CharField(max_length=255)
+
+class Cupboard(Product):
+    shelves = models.IntegerField()
+    author = models.CharField(max_length=255)
