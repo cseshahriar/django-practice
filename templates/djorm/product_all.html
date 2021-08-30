@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Student List{% endblock %}
+
+{% block content %} 
+<div class="container py-5">
+    <div class="row">
+        <div class="col-6">
+            <h2>Student Count: {{ studen_count.0 }}</h2>
+            <div class="card">
+                <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Shelves</th>
+                        <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for object in products %}
+                        <tr>
+                            <th scope="row">{{ object.id }}</th>
+                            <td>{{ object.title }}</td>
+                            <td>{{ object.price }}</td>
+                            <td>{{ object.productbook.author }}</td>
+                            <td>{{ object.cupboard.shelves }}</td>
+                            <td>
+                                <a href="" class="btn btn-primary btn-sm">Edit</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+{% endblock %}
+
+{% block scripts %}
+    <script src="semantic/dist/semantic.min.js"></script>
+{% endblock %}

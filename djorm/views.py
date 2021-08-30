@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from djorm.models import Student, Teacher
 from django.db import connection
 from django.db.models import Q
+from djorm.models import Student, Teacher, Product, ProductBook, Cupboard
 
 """ orm properties:
     exact, iexact
@@ -141,3 +141,10 @@ def custom_sql_qs(request):
         object_list = dictfetchall(cursor)
         print(object_list) 
     return render(request, 'djorm/custom_raw_qs.html', {'object_list': object_list})
+
+
+# inheritance optimizations
+def product_all(request):
+    # products = Product.objects.all() # 11 qs
+    products = Product.objects.all().select_related('productbook', 'cupboard') # 1 qs
+    return render(request, 'djorm/product_all.html', {'products': products})
