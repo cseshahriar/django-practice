@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils import timezone
+from django.urls import reverse
+from users.models import CustomUser
 
 class Teacher(models.Model):
     first_name = models.CharField(max_length=100)
@@ -84,3 +86,30 @@ class BookOrders(BookContent):
 
     def created_on(self):
         return timezone.now() - self.created
+
+# sql optimizations
+class ProductManager(models.Manager):
+    def get_queryset(self):
+        return super(ProductManager, self).get_queryset().filter(is_active=True)
+
+class Category(models.Model):
+    name = models.CharField(max_length=255, db_index=True)
+    slug = models.SlugField(max_length=255, unique=True)
+
+    class Meta:
+        verbose_name_plural = 'categories'
+
+    def get_absolute_url(self):
+        return reverse('store:category_list', args=[self.slug])
+
+    def __str__(self):
+        return self.name
+
+class Product(models.Model):
+    category = models.ForeignKey(Category, related_name='product', on_delete=models.CASCADE)
+    created_by = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    author = models.CharField(max_length=255, default='admin')
+    description = models.TextField(blank=True)
+
+    objects = ProductManager() # custom manager
