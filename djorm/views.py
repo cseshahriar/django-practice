@@ -179,9 +179,10 @@ def product_all(request):
 
 
 def generic_product_all(request):
-    products = ProductClass.objects.all() # 5qs
-    # products = ProductClass.objects.all().select_related('content_type') # 5qs
-    for obj in products:
-        # print(obj.item.title)
-        print(dir(obj))
+    # products = ProductClass.objects.all() # 5qs
+    products = ProductClass.objects.all().select_related('content_type') # 5qs
+    # cupboards = CupboardModel.objects.all()
+    # books = BookModel.objects.all()
+    # products = cupboards.union(books)
+
     return render(request, 'djorm/generic_product_all.html', {'products': products})
