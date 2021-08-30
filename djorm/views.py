@@ -1,14 +1,13 @@
+from django.db import DatabaseError, connection, transaction
+from django.db.models import F, Q, Sum, Max, Min, Avg, FloatField
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
-from django.db import connection
-from django.db.models import Q, F
-from django.http import HttpResponse, HttpResponseRedirect
-from django.db import DatabaseError, transaction
 
-from .models import (
-    Teacher, Student, Category, Product, ProductBook, Cupboard,
-    ProductClass, BookModel, CupboardModel, Bank, Customer
-)
 from .forms import PaymentForm
+from .models import (AggregationBook, Bank, BookModel, Category, Cupboard,
+                     CupboardModel, Customer, Product, ProductBook,
+                     ProductClass, Student, Teacher)
+
 """ orm properties:
     exact, iexact
     contains, icontains
@@ -225,5 +224,29 @@ def process_payment(request):
 
     return render(request, 'djorm/payment_form.html', {'form': form})
 
+
+
+def dj_aggregations(request):
+    book_count = AggregationBook.objects.count()
+    ratings_count = AggregationBook.objects.all().aggregate(Sum('ratings_count'))
+    max_rating = AggregationBook.objects.all().aggregate(Max('average_rating'))
+    min_rating = AggregationBook.objects.all().aggregate(Min('average_rating'))
+
+    avg = AggregationBook.objects.all().aggregate(Avg('average_rating'))
+    rating_diff = AggregationBook.objects.aggregate(
+        rating_diff=Max('average_rating', output_field=FloatField()) - Avg('average_rating')
+    )
+    authors_rating = AggregationBook.objects.filter(authors="Shahriar").aggregate(Avg('average_rating'), Min('average_rating'), Max('average_rating'))
+
+    data = {
+        'count': book_count,
+        'ratings_count': ratings_count,
+        'max_rating': max_rating,
+        'min_rating': min_rating,
+        'avg': avg,
+        'rating_diff': rating_diff,
+        'authors_rating': authors_rating
+    }
+    return JsonResponse(data)
 
 

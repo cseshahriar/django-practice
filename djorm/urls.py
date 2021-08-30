@@ -10,7 +10,8 @@ from .views import (
     custom_sql_qs,
     product_all,
     generic_product_all,
-    process_payment
+    process_payment,
+    dj_aggregations
 )
 
 urlpatterns = [
@@ -26,4 +27,5 @@ urlpatterns = [
     path('product_all/', product_all, name='product_all'),
     path('generic_product_all/', generic_product_all, name='generic_product_all'),
     path('process_payment/', process_payment, name='process_payment'),
+    path('dj_aggregations/', dj_aggregations, name='dj_aggregations'),
 ]

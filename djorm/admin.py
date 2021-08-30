@@ -3,7 +3,7 @@ from .models import (
     Teacher, Student, Category, Product, ProductBook, Cupboard,
     ProductClass, BookModel, CupboardModel,
     Project, ArtProject, ResearchProject,
-    Bank, Customer
+    Bank, Customer, AggregationBook
 )
 from polymorphic.admin import (
     PolymorphicParentModelAdmin,
@@ -41,5 +41,7 @@ class ModelAParentAdmin(PolymorphicParentModelAdmin):
     child_models = (ArtProject, ResearchProject)
     list_filter = (PolymorphicChildModelFilter,)  # This is optional.
 
+
 admin.site.register(Bank)
 admin.site.register(Customer)
+admin.site.register(AggregationBook)
