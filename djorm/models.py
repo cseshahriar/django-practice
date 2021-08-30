@@ -172,6 +172,17 @@ class BookModel(ProductBase):
     publisher = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
 
+    m2m = models.ManyToManyField(
+        ProductClass,
+        related_name="bookmodel",
+        related_query_name='bookmodel'
+    )
+
 class CupboardModel(ProductBase):
     shelves = models.IntegerField()
     author = models.CharField(max_length=255)
+    m2m = models.ManyToManyField(
+        ProductClass,
+        related_name="cupboardmodel",
+        related_query_name='cupboardmodel'
+    )

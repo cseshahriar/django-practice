@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.db import connection
 from django.db.models import Q
-from djorm.models import Student, Teacher, Product, ProductBook, Cupboard
+from .models import (
+    Teacher, Student, Category, Product, ProductBook, Cupboard,
+    ProductClass, BookModel, CupboardModel
+)
 
 """ orm properties:
     exact, iexact
@@ -173,3 +176,12 @@ def product_all(request):
         ORDER BY "djorm_product"."created" DESC
     """
     return render(request, 'djorm/product_all.html', {'products': products})
+
+
+def generic_product_all(request):
+    products = ProductClass.objects.all() # 5qs
+    # products = ProductClass.objects.all().select_related('content_type') # 5qs
+    for obj in products:
+        # print(obj.item.title)
+        print(dir(obj))
+    return render(request, 'djorm/generic_product_all.html', {'products': products})

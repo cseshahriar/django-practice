@@ -8,7 +8,8 @@ from .views import (
     select_output_individual_fiends,
     simple_raw_query,
     custom_sql_qs,
-    product_all
+    product_all,
+    generic_product_all
 )
 
 urlpatterns = [
@@ -20,6 +21,7 @@ urlpatterns = [
     path('only/student/list/', select_output_individual_fiends, name='only_student_list'),
     path('simple/raw/student/list/', simple_raw_query, name='simple_raw_student_list'),
     path('custom_sql_qs/student/', custom_sql_qs, name='custom_sql_qs'),
-    
+
     path('product_all/', product_all, name='product_all'),
+    path('generic_product_all/', generic_product_all, name='generic_product_all'),
 ]
