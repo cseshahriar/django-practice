@@ -9,7 +9,8 @@ from .views import (
     simple_raw_query,
     custom_sql_qs,
     product_all,
-    generic_product_all
+    generic_product_all,
+    process_payment
 )
 
 urlpatterns = [
@@ -24,4 +25,5 @@ urlpatterns = [
 
     path('product_all/', product_all, name='product_all'),
     path('generic_product_all/', generic_product_all, name='generic_product_all'),
+    path('process_payment/', process_payment, name='process_payment'),
 ]

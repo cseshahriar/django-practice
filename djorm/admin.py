@@ -2,7 +2,8 @@ from django.contrib import admin
 from .models import (
     Teacher, Student, Category, Product, ProductBook, Cupboard,
     ProductClass, BookModel, CupboardModel,
-    Project, ArtProject, ResearchProject
+    Project, ArtProject, ResearchProject,
+    Bank, Customer
 )
 from polymorphic.admin import (
     PolymorphicParentModelAdmin,
@@ -39,3 +40,6 @@ class ModelAParentAdmin(PolymorphicParentModelAdmin):
     base_model = Project  # Optional, explicitly set here.
     child_models = (ArtProject, ResearchProject)
     list_filter = (PolymorphicChildModelFilter,)  # This is optional.
+
+admin.site.register(Bank)
+admin.site.register(Customer)

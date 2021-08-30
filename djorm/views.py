@@ -1,11 +1,14 @@
 from django.shortcuts import render
 from django.db import connection
-from django.db.models import Q
+from django.db.models import Q, F
+from django.http import HttpResponse, HttpResponseRedirect
+from django.db import DatabaseError, transaction
+
 from .models import (
     Teacher, Student, Category, Product, ProductBook, Cupboard,
-    ProductClass, BookModel, CupboardModel
+    ProductClass, BookModel, CupboardModel, Bank, Customer
 )
-
+from .forms import PaymentForm
 """ orm properties:
     exact, iexact
     contains, icontains
@@ -186,3 +189,41 @@ def generic_product_all(request):
     # products = cupboards.union(books)
 
     return render(request, 'djorm/generic_product_all.html', {'products': products})
+
+
+# open a transaction
+# @transaction.atomic
+def process_payment(request):
+
+    if request.method == 'POST':
+        form = PaymentForm(request.POST)
+
+        if form.is_valid():
+            input_payor = form.cleaned_data['payor']
+            input_payee = form.cleaned_data['payee']
+            input_amount = form.cleaned_data['amount']
+        
+        with transaction.atomic(): # if any db execution fail rollback else save
+            # All operations should be executed
+
+            # sender, transaction problem can be here
+            payor = Customer.objects.get(name=input_payor)
+            payor.balance -= input_amount
+            payor.save()
+
+            # receiver, transact problem can be hrere
+            payee = Customer.objects.get(name=input_payee)
+            payee.balance += input_amount
+            payee.save()
+
+            # Customer.objects.filter(named=input_payor).update(balance=F('balance') - z)
+            # Customer.objects.filter(named=input_payee).update(balance=F('balance') + z)
+
+            return HttpResponseRedirect('/')
+    else:
+        form = PaymentForm()
+
+    return render(request, 'djorm/payment_form.html', {'form': form})
+
+
+

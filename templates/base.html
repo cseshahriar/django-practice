@@ -13,60 +13,61 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'home_view' %}">Home</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home_view' %}">Home</a>
+          </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            2FA
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="{% url 'login_view' %}">Login</a></li>
-          </ul>
-        </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              2FA
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="{% url 'login_view' %}">Login</a></li>
+            </ul>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'csv_upload' %}">CSV Upload</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'csv_upload' %}">CSV Upload</a>
+          </li>
 
-         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            DjORM
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="{% url 'student_list' %}">Students</a></li>
-            <li><a class="dropdown-item" href="{% url 'or_student_list' %}"> Or query Students</a></li>
-            <li><a class="dropdown-item" href="{% url 'and_student_list' %}">And query Students</a></li>
-            <li><a class="dropdown-item" href="{% url 'union_student_list' %}">Union query Students</a></li>
-            <li><a class="dropdown-item" href="{% url 'not_student_list' %}">Not query Students</a></li>
-            <li><a class="dropdown-item" href="{% url 'only_student_list' %}">Only query Students</a></li>
-            <li><a class="dropdown-item" href="{% url 'simple_raw_student_list' %}">Simple Raw QS</a></li>
-            <li><a class="dropdown-item" href="{% url 'custom_sql_qs' %}">Custom Raw QS</a></li>
-            
-            <li><a class="dropdown-item" href="{% url 'product_all' %}">product_all</a></li>
-            <li><a class="dropdown-item" href="{% url 'generic_product_all' %}">generic_product_all</a></li>
-          </ul>
-        </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              DjORM
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="{% url 'student_list' %}">Students</a></li>
+              <li><a class="dropdown-item" href="{% url 'or_student_list' %}"> Or query Students</a></li>
+              <li><a class="dropdown-item" href="{% url 'and_student_list' %}">And query Students</a></li>
+              <li><a class="dropdown-item" href="{% url 'union_student_list' %}">Union query Students</a></li>
+              <li><a class="dropdown-item" href="{% url 'not_student_list' %}">Not query Students</a></li>
+              <li><a class="dropdown-item" href="{% url 'only_student_list' %}">Only query Students</a></li>
+              <li><a class="dropdown-item" href="{% url 'simple_raw_student_list' %}">Simple Raw QS</a></li>
+              <li><a class="dropdown-item" href="{% url 'custom_sql_qs' %}">Custom Raw QS</a></li>
+              
+              <li><a class="dropdown-item" href="{% url 'product_all' %}">product_all</a></li>
+              <li><a class="dropdown-item" href="{% url 'generic_product_all' %}">generic_product_all</a></li>
+              <li><a class="dropdown-item" href="{% url 'process_payment' %}">process_payment</a></li>
+            </ul>
+          </li>
 
-      </ul>
+        </ul>
 
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      
+      </div>
     </div>
-  </div>
 </nav>
 
     {% block content %}{% endblock %}

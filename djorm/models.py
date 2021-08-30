@@ -208,3 +208,20 @@ class ArtProject(Project):
 class ResearchProject(Project):
     shelves = models.IntegerField()
     author = models.CharField(max_length=255)
+
+# for transactions atomics
+class Customer(models.Model):
+    name = models.CharField(max_length=255)
+    balance = models.DecimalField(max_digits=8, decimal_places=2)
+
+    def __str__(self):
+        return f'{self.name} - {self.balance}' 
+
+
+class Bank(models.Model):
+    payor = models.CharField(max_length=255)
+    payee = models.CharField(max_length=255)
+    amount = models.DecimalField(max_digits=8, decimal_places=2)
+
+    def __str__(self):
+        return str(self.amount)
