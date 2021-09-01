@@ -236,7 +236,10 @@ def dj_aggregations(request):
     rating_diff = AggregationBook.objects.aggregate(
         rating_diff=Max('average_rating', output_field=FloatField()) - Avg('average_rating')
     )
-    authors_rating = AggregationBook.objects.filter(authors="Shahriar").aggregate(Avg('average_rating'), Min('average_rating'), Max('average_rating'))
+    authors_rating = AggregationBook.objects.filter(
+        authors="Shahriar").aggregate(
+            Avg('average_rating'), Min('average_rating'), Max('average_rating')
+        )
 
     data = {
         'count': book_count,

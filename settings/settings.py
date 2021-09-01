@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'barcodeapp.apps.BarcodeappConfig',
     'csvapp.apps.CsvappConfig',
     'djorm.apps.DjormConfig',
+    'pypdf.apps.PypdfConfig',
 ]
 
 MIDDLEWARE = [
