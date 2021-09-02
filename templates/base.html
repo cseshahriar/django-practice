@@ -35,11 +35,19 @@
             </ul>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'csv_upload' %}">CSV Upload</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'customer_pdf' %}">customer_pdf</a>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              PDF
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item" aria-current="page" href="{% url 'customer_pdf' %}">Customer PDF</a>
+              </li>
+              <li>
+                <a class="dropdown-item" aria-current="page" href="{% url 'customer_list' %}">Customer List</a>
+              </li>
+            </ul>
           </li>
 
           <li class="nav-item dropdown">
