@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'csvapp.apps.CsvappConfig',
     'djorm.apps.DjormConfig',
     'pypdf.apps.PypdfConfig',
+    'pychartjs.apps.PychartjsConfig',
 ]
 
 MIDDLEWARE = [
