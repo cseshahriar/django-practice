@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'djorm.apps.DjormConfig',
     'pypdf.apps.PypdfConfig',
     'pychartjs.apps.PychartjsConfig',
+    'pyqrcodeapp.apps.PyqrcodeappConfig',
 ]
 
 MIDDLEWARE = [
