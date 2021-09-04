@@ -1,4 +1,4 @@
-from django.db.models.signals import pre_save, post_save, m2m_changed
+from django.db.models.signals import pre_save, post_save, m2m_changed, pre_delete
 from django.dispatch import receiver
 from users.models import CustomUser
 from .models import Buyer, Car, Order, Sale
@@ -52,4 +52,11 @@ def m2m_changed_cars_order(sender, instance, action, **kwargs):
 def post_save_created_or_update(sender, instance, created, **kwargs):
     obj, _ = Sale.objects.get_or_create(order=instance)
     obj.amount = instance.total_price
+    obj.save()
+
+
+@receiver(pre_delete, sender=Sale)
+def pre_delete_change_active_order(sender, instance, **kwargs):
+    obj = instance.order
+    obj.active = False
     obj.save()
