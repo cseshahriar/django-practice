@@ -1,7 +1,7 @@
 from django.db.models.signals import pre_save, post_save, m2m_changed
 from django.dispatch import receiver
 from users.models import CustomUser
-from .models import Buyer, Car, Order
+from .models import Buyer, Car, Order, Sale
 import uuid
 
 @receiver(post_save, sender=CustomUser)
@@ -46,3 +46,10 @@ def m2m_changed_cars_order(sender, instance, action, **kwargs):
         instance.total = total
         instance.total_price = total_price
         instance.save()
+
+
+@receiver(post_save, sender=Order)
+def post_save_created_or_update(sender, instance, created, **kwargs):
+    obj, _ = Sale.objects.get_or_create(order=instance)
+    obj.amount = instance.total_price
+    obj.save()

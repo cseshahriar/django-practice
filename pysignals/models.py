@@ -32,3 +32,11 @@ class Order(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+
+class Sale(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    amount = models.PositiveIntegerField(blank=True, null=True)
+
+    def __str__(self):
+        return str(self.amount)
