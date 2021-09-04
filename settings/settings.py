@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'pypdf.apps.PypdfConfig',
     'pychartjs.apps.PychartjsConfig',
     'pyqrcodeapp.apps.PyqrcodeappConfig',
+    'pysignals.apps.PysignalsConfig',
 ]
 
 MIDDLEWARE = [
