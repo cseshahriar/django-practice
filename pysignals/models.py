@@ -22,3 +22,13 @@ class Car(models.Model):
     #     if self.code == "":
     #         self.code = str(uuid.uuid4()).replace("-", "").upper()[:10]
     #     return super().save(*args)
+
+class Order(models.Model):
+    name = models.CharField(max_length=100)
+    cars = models.ManyToManyField(Car)
+    total = models.PositiveIntegerField(blank=True, null=True)
+    total_price = models.PositiveIntegerField(blank=True, null=True)
+    active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return str(self.name)
