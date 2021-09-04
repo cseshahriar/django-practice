@@ -38,9 +38,11 @@ def m2m_changed_cars_order(sender, instance, action, **kwargs):
     total = 0
     total_price = 0
 
-    for car in instance.cars.all():
-        total += 1
-        total_price += car.price
-    instance.total = total
-    instance.total_price = total_price
-    instance.save()
+    if action == "post_add" or action == "post_remove": # duplicate ignore
+        print(action)
+        for car in instance.cars.all():
+            total += 1
+            total_price += car.price
+        instance.total = total
+        instance.total_price = total_price
+        instance.save()
