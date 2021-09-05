@@ -5,6 +5,8 @@ charset-normalizer==2.0.4
 Django==3.2.6
 django-cleanup==5.2.0
 django-crispy-forms==1.12.0
+django-crontab==0.7.1
+django-dbbackup==3.3.0
 django-debug-toolbar==3.2.2
 django-polymorphic==3.0.0
 future==0.18.2

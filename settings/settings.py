@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'crispy_forms',
     'django_cleanup',
+    'dbbackup',  # django-dbbackup
 
     # custom apps
     'users.apps.UsersConfig',
@@ -59,7 +60,18 @@ INSTALLED_APPS = [
     'pychartjs.apps.PychartjsConfig',
     'pyqrcodeapp.apps.PyqrcodeappConfig',
     'pysignals.apps.PysignalsConfig',
+    'records.apps.RecordsConfig',
 ]
+
+# dbbackup settings
+DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
+DBBACKUP_STORAGE_OPTIONS = {
+    'location': os.path.join(BASE_DIR, 'backup')
+}
+# Testing that everything worked
+#  python manage.py dbbackup
+#  python manage.py dbrestore 
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
