@@ -73,9 +73,10 @@ async def main_view_async(request):
     """
     start_time = time.time()
     # task1 and task2 bot running same time, thats async
-    task1 = asyncio.ensure_future(get_movies_async())
-    task2 = asyncio.ensure_future(get_stories_async())
-    await asyncio.wait([task1, task2])
+    # task1 = asyncio.ensure_future(get_movies_async())
+    # task2 = asyncio.ensure_future(get_stories_async())
+    # await asyncio.wait([task1, task2])
+    await asyncio.gather(get_movies_async(), get_stories_async())
     total = (time.time() - start_time)
     print('async total ', total) #  4.006905794143677
     return HttpResponse('async')
