@@ -36,6 +36,7 @@ INTERNAL_IPS = INTERNAL_IPS  # local_settings.py
 # Application definition
 
 INSTALLED_APPS = [
+    'django_crontab',
     'django.contrib.admin',
     'django.contrib.auth',
     'polymorphic',
@@ -72,6 +73,10 @@ DBBACKUP_STORAGE_OPTIONS = {
 #  python manage.py dbbackup
 #  python manage.py dbrestore 
 
+# corn job
+CRONJOBS = [
+    ('*/1 * * * *', 'settings.cron.my_dbbackup') # every minites
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
