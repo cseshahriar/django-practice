@@ -62,6 +62,8 @@ INSTALLED_APPS = [
     'pyqrcodeapp.apps.PyqrcodeappConfig',
     'pysignals.apps.PysignalsConfig',
     'records.apps.RecordsConfig',
+
+    'bgtasks.apps.BgtasksConfig',
 ]
 
 # dbbackup settings
@@ -75,7 +77,9 @@ DBBACKUP_STORAGE_OPTIONS = {
 
 # corn job
 CRONJOBS = [
-    ('*/1 * * * *', 'settings.cron.my_dbbackup') # every minites
+    # ('*/1 * * * *', 'settings.cron.my_dbbackup'),
+    ('*/1 * * * *', 'bgtasks.corn.my_bgtask'), 
+    ('*/1 * * * *', 'bgtasks.corn.document_expire_check'), 
 ]
 
 MIDDLEWARE = [
