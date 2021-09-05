@@ -62,8 +62,8 @@ INSTALLED_APPS = [
     'pyqrcodeapp.apps.PyqrcodeappConfig',
     'pysignals.apps.PysignalsConfig',
     'records.apps.RecordsConfig',
-
     'bgtasks.apps.BgtasksConfig',
+    'pyasync.apps.PyasyncConfig',
 ]
 
 # dbbackup settings

@@ -77,6 +77,17 @@
             <a class="nav-link active" aria-current="page" href="{% url 'qrcode_list_view' %}">Qrcode</a>
           </li>
 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Async Views
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="{% url 'async_home_view' %}">home_view</a></li>
+              <li><a class="dropdown-item" href="{% url 'async_main_view' %}">sync_main_view</a></li>
+              <li><a class="dropdown-item" href="{% url 'async_main_view_async' %}">Main View Async</a></li>
+            </ul>
+          </li>
+
         </ul>
 
         <form class="d-flex">
