@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Upload with Dropzone{% endblock %}
+
+{% block content %} 
+<div class="container py-5">
+    <div class="row">
+        <div class="col-6">
+            <h2>Upload with Dropzone</h2>
+            <div class="card">
+                <div class="card-body">
+
+                    <form action="{% url 'file_upload_view' %}" method="POST" 
+                    class="dz dropzone" id="my_dropzone" enctype="multipart/form-data">
+                      {% csrf_token %}
+                        <div class="fallback">
+                            <input name="file" type="file"  multiple />
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+{% endblock %}
+
+{% block stylesheet %}
+    <!-- dropzone css -->
+    <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+  
+
+    <style>
+        body {
+            background-color: #f8f8f8;;
+        }
+        .dz {
+            border:dashed !important;
+            border-color: #ccc !important;
+            border-radius: 10px !important;
+        }
+        .dz:hover {
+            background-color: aliceblue !important;
+        }
+    </style>
+{% endblock %}
+
+{% block scripts %}
+    <!-- dropzone js -->
+    <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+    
+    <script>
+        // Disable auto discover for all elements:
+        Dropzone.autoDiscover = false;
+
+        const myDropzone = new Dropzone("#my_dropzone", {
+            url: "{% url 'file_upload_view' %}",
+            maxFiles: 2,
+            maxFilesize:1, //1mb
+            acceptedFiles: '.jpg',
+        })
+
+   
+    </script>
+{% endblock %}

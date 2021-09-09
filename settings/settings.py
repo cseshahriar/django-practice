@@ -64,6 +64,9 @@ INSTALLED_APPS = [
     'records.apps.RecordsConfig',
     'bgtasks.apps.BgtasksConfig',
     'pyasync.apps.PyasyncConfig',
+
+    # javaScript
+    'dj_dropzone.apps.DjDropzoneConfig',
 ]
 
 # dbbackup settings
