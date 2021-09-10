@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django_cleanup',
     'dbbackup',  # django-dbbackup
+    'django_seed',
 
     # custom apps
     'users.apps.UsersConfig',
@@ -67,6 +68,7 @@ INSTALLED_APPS = [
 
     # javaScript
     'dj_dropzone.apps.DjDropzoneConfig',
+    'djs.apps.DjsConfig',
 ]
 
 # dbbackup settings
