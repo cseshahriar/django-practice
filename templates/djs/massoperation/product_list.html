@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Live Search{% endblock %}
+
+{% block content %} 
+<div class="container py-5">
+    <div class="row">
+        <div class="col-8 offset-2">
+          
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% csrf_token %}
+                    {% for product in products %}
+                    <tr id="{{product.id}}">
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.category }}</td>
+                        <td>{{ product.price }}</td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="product_id[]" value="{{product.id}}" id="product_id">
+                            </div>
+                        </td>
+                    </tr>
+                  {% endfor %}
+                 
+                </tbody>
+              </table>
+
+              <button type="submit" id="delete_btn" class="btn btn-warning btn-block">Delete All</button>
+              <input type="hidden" id="url" data="{% url 'product-list' %}">
+            
+        </div>
+    </div> 
+</div>
+{% endblock %}
+
+{% block stylesheet %}
+<style>
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#delete_btn").click(function() {
+            if(confirm("Are you sure you want to delete")) {
+                var csrf = $('input[name=csrfmiddlewaretoken').val();
+                var ajaxUrl = $('#url').val();
+                console.log(ajaxUrl)
+
+                var ids = []; 
+                $(".form-check-input").each(function(){
+                    if ($(this).is(":checked")) {
+                        ids.push($(this).val());
+                    }
+                });
+
+
+                // if no selection
+                if(ids.length > 0) {
+                    console.log(ids);
+                    $.ajax({
+                        url: "/product/list/",
+                        method: "POST",
+                        data:{
+                            ids:ids,
+                            csrfmiddlewaretoken: csrf
+                        },
+                        success: function(response) {
+                            console.log('success');
+                        }
+                    });
+                } else{
+                    alert("Fill the required fields");
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}

@@ -14,3 +14,13 @@ class Info(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+
+# =================== multiple object deletion ================================
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+    category = models.CharField(max_length=100)
+    price = models.FloatField()
+
+    def __str__(self):
+        return self.name

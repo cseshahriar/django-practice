@@ -1,10 +1,11 @@
 import json
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
+from django.views import View
 from django.views.generic import ListView
 from django.views.generic import TemplateView
 
-from .models import Post, Info
+from .models import Post, Info, Product
 
 class PostView(TemplateView):
     template_name = 'djs/spinner/spinner.html'
@@ -30,3 +31,23 @@ class InfoListView(ListView):
         context = super().get_context_data(**kwargs)
         context['qs_json'] = json.dumps(list(self.model.objects.values()))
         return context
+
+
+
+# ============== multiple objects delete =================
+class ProductListView(View):
+    template_name = 'djs/massoperation/product_list.html'
+
+    def get(self, request, *args, **kwargs):
+        products = Product.objects.all()
+        return render(request, self.template_name, {'products': products})
+
+    def post(self, request, *args, **kwargs):
+        if request.method == 'POST':
+            product_ids = request.POST.getlist('ids[]') # from ajax
+            print('product_ids--------------------------------', product_ids)
+            for id in product_ids:
+                product = Product.objects.get(pk=id)
+                product.delete()
+
+            return redirect('product-list')
