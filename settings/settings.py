@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     # javaScript
     'dj_dropzone.apps.DjDropzoneConfig',
     'djs.apps.DjsConfig',
+    'events.apps.EventsConfig',
 ]
 
 # dbbackup settings
