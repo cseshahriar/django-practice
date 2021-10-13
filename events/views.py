@@ -3,6 +3,15 @@ from django.http import HttpResponse
 from events.models import Event
 from events.forms import EventForm
 
+
+def events(request):
+    data = {
+        "object_list": Event.objects.filter(is_active=True)
+    }
+    return render(request, 'events/events.html', data)
+
+
+# ================================= crud ======================================
 def event_home(request):
     data = {
         "events": Event.objects.all()

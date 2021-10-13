@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Event Calender{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.css">
+{% endblock %}
+
+{% block content %} 
+<div class="container py-5">
+    <div class="row">
+        <div class="col-10 offset-1">
+            <h1>Your Event Calender</h1>
+            <div id='calendar' class="card p-3"></div>
+        </div>
+    </div> 
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/locales-all.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {  
+      var calendarUI = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarUI, {
+            headerToolbar:{
+                left: 'prev,next',
+                center: 'title',
+                right: 'today,week,month'
+            },
+            events: [
+                {% for obj in object_list %}
+                    {
+                        title: "Title: {{ obj.title }}",
+                        start: '{{ obj.start|date:"Y-m-d" }}',
+                        end: '{{ obj.end|date:"Y-m-d" }}',
+                    },
+                {% endfor %}
+            ]
+      });
+      
+      calendar.render(); 
+      calendar.setOptions('locale', 'en');
+    });
+
+  </script>
+{% endblock %}
