@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Event Page{% endblock %}
+
+{% block content %} 
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12">
+            <h1>Your Event Calender</h1>
+            <h2>{{ event.name }}</h2>
+            <h4>{{ event.starts_at }}</h4>
+            <h4>{{ event.ends_at }}</h4>
+            <h4>{{ event.created_at }}</h4>
+            <p>{{ event.description }}</p>
+        </div>
+    </div> 
+</div>
+{% endblock %}
