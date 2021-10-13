@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'records.apps.RecordsConfig',
     'bgtasks.apps.BgtasksConfig',
     'pyasync.apps.PyasyncConfig',
+    'event.apps.EventConfig',
 
     # javaScript
     'dj_dropzone.apps.DjDropzoneConfig',
