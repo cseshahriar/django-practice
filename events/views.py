@@ -32,7 +32,7 @@ def event_update(request, pk):
         return HttpResponse("Event doesn't exists")
 
 def process_event_form(request, pk=None):
-    event = Event.objects.get(pk=pk) if pk is not None else Event()
+    event = Event.objects.get(pk=pk) if pk is not None else None
     print('-' * 50, event)
 
     form = EventForm(request.POST or None, instance=event)
