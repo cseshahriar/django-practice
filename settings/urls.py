@@ -15,6 +15,5 @@ urlpatterns = [
     path('', include('pyasync.urls')),
     path('', include('dj_dropzone.urls')),
     path('', include('djs.urls')),
-    path('', include('event.urls')),
     path('__debug__/', include(debug_toolbar.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
