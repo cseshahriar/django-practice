@@ -1,0 +1,6 @@
+# csv to json for fixtures
+
+
+# multi database
+python manage.py migrate --database=users_db
+python manage.py createsuperuser --database=users_db

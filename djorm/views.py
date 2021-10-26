@@ -251,5 +251,3 @@ def dj_aggregations(request):
         'authors_rating': authors_rating
     }
     return JsonResponse(data)
-
-

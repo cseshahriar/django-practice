@@ -1,0 +1,3 @@
+model,Title,authors,average_rating,isbn,isbn13,language_code,num_pages,ratings_count,text_review_count,publication_date,publisher
+djorm.aggregationbook,Harry Potter,J.k Rowling ,4.5,3434,343434,eng,654,3434,3434,2016-09-01,Scholastic inc.
+djorm.aggregationbook,Harry Potter2,J.k Rowling ,5.5,3435,343435,eng,655,3435,3435,2016-09-02,Scholastic inc.

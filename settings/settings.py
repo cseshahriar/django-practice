@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     'dj_dropzone.apps.DjDropzoneConfig',
     'djs.apps.DjsConfig',
     'events.apps.EventsConfig',
+    'blue.apps.BlueConfig',
 ]
 
 # dbbackup settings
@@ -124,12 +125,21 @@ WSGI_APPLICATION = 'settings.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default': {},
+    'users_db': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'users.db.sqlite3'),
+    },
+    'blue_db': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'blue.db.sqlite3'),
     }
 }
 
+DATABASE_ROUTERS = [
+    'routers.db_routers.AuthRouter',
+    'routers.db_routers.Blue',
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -177,7 +187,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_URL = '/logn/'
 # default accounts/login
 
-AUTH_USER_MODEL = 'users.CustomUser'
+# AUTH_USER_MODEL = 'users.CustomUser'
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 DEBUG_TOOLBAR_PANELS = [
