@@ -243,3 +243,8 @@ class AggregationBook(models.Model):
 
   def __str__(self):
       return self.title
+
+
+class Details(models.Model):
+    name = models.CharField(_("name"), max_length=255)
+    age = models.CharField(_("age"), max_length=255)
