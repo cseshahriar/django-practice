@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'records.apps.RecordsConfig',
     'bgtasks.apps.BgtasksConfig',
     'pyasync.apps.PyasyncConfig',
+    'imgcrop.apps.ImgcropConfig',
 
     # javaScript
     'dj_dropzone.apps.DjDropzoneConfig',
@@ -125,21 +126,11 @@ WSGI_APPLICATION = 'settings.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {},
-    'users_db': {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'users.db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     },
-    'blue_db': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'blue.db.sqlite3'),
-    }
 }
-
-DATABASE_ROUTERS = [
-    'routers.db_routers.AuthRouter',
-    'routers.db_routers.Blue',
-]
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators

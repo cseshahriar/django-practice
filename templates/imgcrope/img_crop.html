@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block stylesheet %}
+    <style>
+        img {
+          width: 100%;
+        }
+        .not-visible {
+            display: none;
+        }
+    </style>
+{% endblock %}
+
+
+{% block title %}Image Cropper{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="text-center">Image Cropper</h1>
+
+                    <div id="alert-box" class="mb-3"></div>
+                    <div id="image-box" class="mb-3"></div>
+
+                    <form action="" id="image-form">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                    </form>
+                    <button class="btn btn-primary mt-3 not-visible" id="confirm-btn">confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.css" integrity="sha256-jKV9n9bkk/CTP8zbtEtnKaKf+ehRovOYeKoyfthwbC8=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.js" integrity="sha256-CgvH7sz3tHhkiVKh05kSUgG97YtzYNnWt6OXcmYzqHY=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cropper/1.0.1/jquery-cropper.min.js" integrity="sha512-V8cSoC5qfk40d43a+VhrTEPf8G9dfWlEJgvLSiq2T2BmgGRmZzB8dGe7XAABQrWj3sEfrR5xjYICTY4eJr76QQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script>
+        console.log('Hello')
+        const alertBox = document.getElementById("alert-box");
+        const imageBox = document.getElementById("image-box");
+        const imageForm = document.getElementById("image-form");
+        const confirmBtn = document.getElementById('confirm-btn')
+        const input = document.getElementById("id_file");
+        const csrf = document.getElementsByName("csrfmiddlewaretoken");
+
+        // if input
+        input.addEventListener('change', ()=> {
+            console.log('input change----------------------------------------')
+            confirmBtn.classList.remove('not-visible');
+
+            const img_data = input.files[0];
+            const img_url = URL.createObjectURL(img_data);
+            imageBox.innerHTML = `<img src="${img_url}" id="image" width="500px">`;
+
+            // copper js
+            var $image = $('#image');
+            $image.cropper({
+                aspectRatio: 16 / 9, // 9/8 square
+                crop: function(event) {
+                    console.log(event.detail.x);
+                    console.log(event.detail.y);
+                    console.log(event.detail.width);
+                    console.log(event.detail.height);
+                    console.log(event.detail.rotate);
+                    console.log(event.detail.scaleX);
+                    console.log(event.detail.scaleY);
+                }
+            });
+
+            // Get the Cropper.js instance after initialized
+            var cropper = $image.data('cropper');
+
+            // confirm
+            confirmBtn.addEventListener('click', ()=> {
+                 cropper.getCroppedCanvas().toBlob((blob) => {
+                    const fd = new FormData();
+                    fd.append('csrfmiddlewaretoken', csrf[0].value)
+                    fd.append('file', blob, 'my-image.png')
+
+                    // ajax
+                    $.ajax({
+                        type:"POST",
+                        url: imageForm.action,
+                        enctype: "multipart/form-data",
+                        data:fd,
+                        success: function (response) {
+                            alertBox.innerHTML = `<div class="alert alert-success" role="alert">
+                                                   Successfully saved and cropped the selected image</div>`;
+                        },
+                        error: function (error) {
+                            alertBox.innerHTML = `<div class="alert alert-danger" role="alert">
+                                                   Oops! Something went wrong.</div>`;
+                        },
+                        cache:false,
+                        contentType:false,
+                        processData:false
+                    });
+
+                });
+            });
+        });
+
+    </script>
+{% endblock %}
