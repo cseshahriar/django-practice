@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django_cleanup',
     'dbbackup',  # django-dbbackup
     'django_seed',
+    'django_filters',
 
     # custom apps
     'users.apps.UsersConfig',
