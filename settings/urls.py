@@ -15,6 +15,7 @@ urlpatterns = [
     path('', include('pyasync.urls')),
     path('', include('dj_dropzone.urls')),
     path('', include('djs.urls')),
+    path('', include('bulkcrud.urls')),
     path('events/', include('events.urls')),
     path('imgcrop/', include('imgcrop.urls')),
     path('__debug__/', include(debug_toolbar.urls)),

@@ -66,6 +66,7 @@ INSTALLED_APPS = [
     'bgtasks.apps.BgtasksConfig',
     'pyasync.apps.PyasyncConfig',
     'imgcrop.apps.ImgcropConfig',
+    'bulkcrud.apps.BulkcrudConfig',
 
     # javaScript
     'dj_dropzone.apps.DjDropzoneConfig',
