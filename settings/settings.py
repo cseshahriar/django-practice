@@ -67,13 +67,13 @@ INSTALLED_APPS = [
     'bgtasks.apps.BgtasksConfig',
     'pyasync.apps.PyasyncConfig',
     'imgcrop.apps.ImgcropConfig',
-    'pyhtmx.apps.PyhtmxConfig',
 
     # javaScript
     'dj_dropzone.apps.DjDropzoneConfig',
     'djs.apps.DjsConfig',
     'events.apps.EventsConfig',
     'blue.apps.BlueConfig',
+    'py_threading.apps.PyThreadingConfig',
 ]
 
 # dbbackup settings

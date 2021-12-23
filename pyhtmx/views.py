@@ -4,7 +4,11 @@ from typing import Any, Dict, List, cast
 from django.forms.models import BaseModelForm
 from django.http import HttpResponse
 from django.http.request import HttpRequest
-from django.views.generic import CreateView, DetailView, ListView
+
+from django.views.generic.edit import CreateView
+from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
+
 from django_filters.views import FilterView
 # app import
 from .filters import TaskListFilter
@@ -13,9 +17,11 @@ from .models import TaskList
 
 
 class TaskListListView(ListView):
+    template_name = "pyhtmx/tasklist_list.html"
     model = TaskList
 
     def get_context_data(self, **kwargs: Dict[str, Any]) -> Dict[str, Any]:
+        print('-' * 50)
         return super().get_context_data(
             form=TaskListCreateForm(), filterset=TaskListFilter, **kwargs
         )
@@ -26,9 +32,9 @@ class TaskListFilterView(FilterView):
 
 
 class TaskListCreateView(CreateView):
+    template_name = "htmx/create_form.html"
     model = TaskList
     form_class = TaskListCreateForm
-    template_name = "htmx/tasklist_create_form.html"
 
     def form_valid(self, form: BaseModelForm) -> HttpResponse:
         task_list = form.save()

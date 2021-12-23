@@ -17,5 +17,6 @@ urlpatterns = [
     path('', include('djs.urls')),
     path('events/', include('events.urls')),
     path('imgcrop/', include('imgcrop.urls')),
+    path('thread/', include('py_threading.urls')),
     path('__debug__/', include(debug_toolbar.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
