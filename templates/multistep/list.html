@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Multiple forms list{% endblock %}
+
+
+{% block content %} 
+<div class="container py-5">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">Django Multisteps list</h2>
+        </div>
+    </div> 
+
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for obj in object_list %}
+                        <tr>
+                          <th scope="row">{{ obj.pk }}</th>
+                          <th scope="row">{{ obj }}</th>
+                        </tr>
+                    {% endfor %}
+                 
+                </tbody>
+              </table>
+        </div>
+    </div>
+ 
+</div>
+{% endblock %}

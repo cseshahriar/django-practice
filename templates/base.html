@@ -4,10 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
     <title>{% block title %} {% endblock %}</title>
     {% block stylesheet %} {% endblock %}
   </head>
@@ -103,6 +101,8 @@
               <li><a class="dropdown-item" href="{% url 'photo_list' %}">Image Cropper2</a></li>
 
                 <li><a class="dropdown-item" href="{% url 'bulk_product_list' %}">bulk Product List</a></li>
+                <li><a class="dropdown-item" href="{% url 'multistep_list' %}">multistep_list</a></li>
+                <li><a class="dropdown-item" href="{% url 'stepform' %}">stepform</a></li>
             </ul>
           </li>
 
@@ -117,7 +117,21 @@
     </div>
 </nav>
 
-    {% block content %}{% endblock %}
+    {% block content %}
+    
+        <div class="container py-3">
+          <div class="row">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+        </div>
+
+    {% endblock %}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>

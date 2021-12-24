@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     'events.apps.EventsConfig',
     'blue.apps.BlueConfig',
     'py_threading.apps.PyThreadingConfig',
+    'multistepform.apps.MultistepformConfig',
 ]
 
 # dbbackup settings
