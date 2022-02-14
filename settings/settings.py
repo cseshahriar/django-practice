@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'dbbackup',  # django-dbbackup
     'django_seed',
     'django_filters',
+    'django_editorjs',
 
     # custom apps
     'users.apps.UsersConfig',
@@ -76,6 +77,7 @@ INSTALLED_APPS = [
     'blue.apps.BlueConfig',
     'py_threading.apps.PyThreadingConfig',
     'multistepform.apps.MultistepformConfig',
+    'editorjsapp.apps.EditorjsappConfig',
 ]
 
 # dbbackup settings
@@ -174,9 +176,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join('media')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_URL = '/logn/'
