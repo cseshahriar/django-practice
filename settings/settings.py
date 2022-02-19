@@ -36,6 +36,7 @@ INTERNAL_IPS = INTERNAL_IPS  # local_settings.py
 # Application definition
 
 INSTALLED_APPS = [
+    'django_grapesjs',
     'django_crontab',
     'django.contrib.admin',
     'django.contrib.auth',

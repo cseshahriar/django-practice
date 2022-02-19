@@ -46,3 +46,8 @@ def editjs_home_view(request):
 def editjs_post_detail(request, pk):
     post = Post.objects.get(pk=pk)
     return render(request, 'djs/post_detail.html', {'post': post})
+
+
+# grapperjs
+def grapperjs_home_view(request):
+    return render(request, 'djs/grapesjs.html')
