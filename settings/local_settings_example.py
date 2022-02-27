@@ -33,6 +33,7 @@ ENABLE_HTTPS = False
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-TWILIO_ACCOUNT_SID = ''
-TWILIO_AUTH_TOKEN = ''
-TWILIO_NUMBER =''
+
+# TWILIO_ACCOUNT_SID = 'ACea3e56b5d026e200c5ba7aa9f127db3b'
+# TWILIO_AUTH_TOKEN = '387cab95610b27bbff192fb7c3fc2668'
+# TWILIO_NUMBER = '+15622685529'
