@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     'pyasync.apps.PyasyncConfig',
     'imgcrop.apps.ImgcropConfig',
     'bulkcrud.apps.BulkcrudConfig',
+    'data_visualize.apps.DataVisualizeConfig',
 
     # javaScript
     'dj_dropzone.apps.DjDropzoneConfig',
