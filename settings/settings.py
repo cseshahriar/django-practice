@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django_seed',
     'django_filters',
     'django_editorjs',
+    'import_export',
 
     # custom apps
     'users.apps.UsersConfig',
@@ -70,7 +71,7 @@ INSTALLED_APPS = [
     'imgcrop.apps.ImgcropConfig',
     'bulkcrud.apps.BulkcrudConfig',
     'data_visualize.apps.DataVisualizeConfig',
-    'import_export.apps.ImportExportConfig',
+    'import_export_app.apps.ImportExportAppConfig',
 
     # javaScript
     'dj_dropzone.apps.DjDropzoneConfig',
