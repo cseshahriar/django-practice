@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     'imgcrop.apps.ImgcropConfig',
     'bulkcrud.apps.BulkcrudConfig',
     'data_visualize.apps.DataVisualizeConfig',
+    'import_export.apps.ImportExportConfig',
 
     # javaScript
     'dj_dropzone.apps.DjDropzoneConfig',
