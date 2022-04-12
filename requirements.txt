@@ -16,6 +16,7 @@ django-filter==21.1
 django-import-export==2.7.1
 django-polymorphic==3.0.0
 django-seed==0.2.2
+django-widget-tweaks==1.4.12
 et-xmlfile==1.1.0
 Faker==8.12.1
 fonttools==4.29.1

@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'django_filters',
     'django_editorjs',
     'import_export',
+    'widget_tweaks',
+
 
     # custom apps
     'users.apps.UsersConfig',
@@ -72,6 +74,7 @@ INSTALLED_APPS = [
     'bulkcrud.apps.BulkcrudConfig',
     'data_visualize.apps.DataVisualizeConfig',
     'import_export_app.apps.ImportExportAppConfig',
+    'ajaxcrud.apps.AjaxcrudConfig',
 
     # javaScript
     'dj_dropzone.apps.DjDropzoneConfig',

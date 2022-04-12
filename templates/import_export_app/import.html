@@ -7,7 +7,11 @@
     <div class="row">
         <div class="col-12">
             <h1>Import data</h1>
-            
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="myfile">
+                <button type="submit">Upload</button>
+              </form>
         </div>
     </div> 
 </div>

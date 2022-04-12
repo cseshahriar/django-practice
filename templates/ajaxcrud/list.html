@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Books List {% endblock %}
+
+{% block content %} 
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="page-header">Books</h1>
+                    <!-- BUTTON TO TRIGGER THE ACTION -->
+                    <p>
+                        <button type="button"
+                                class="btn btn-primary js-create-book"
+                                data-url="{% url 'ajaxcrud_book_create' %}">
+                            <span class="glyphicon glyphicon-plus"></span>
+                            New book
+                        </button>
+
+
+                      </p>
+
+                    <table class="table" id="book-table">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Type</th>
+                            <th>Publication date</th>
+                            <th>Pages</th>
+                            <th>Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% include 'ajaxcrud/partial_book_list.html' %}
+                        </tbody>
+                    </table>
+
+                    <!-- THE MODAL WE WILL BE USING -->
+                    <div class="modal fade" id="modal-book">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div> 
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+    <script>
+       $(function () {
+
+            /* Functions */
+            var loadForm = function () {
+                var btn = $(this);
+                $.ajax({
+                    url: btn.attr("data-url"),
+                    type: 'get',
+                    dataType: 'json',
+                    beforeSend: function () {
+                        $("#modal-book").modal("show");
+                    },
+                    success: function (data) {
+                        $("#modal-book .modal-content").html(data.html_form);
+                    }
+                });
+            };
+
+            var saveForm = function () {
+                var form = $(this);
+                $.ajax({
+                    url: form.attr("action"),
+                    data: form.serialize(),
+                    type: form.attr("method"),
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.form_is_valid) {
+                            $("#book-table tbody").html(data.html_book_list);
+                            $("#modal-book").modal('hide');
+                        }
+                        else {
+                            $("#modal-book .modal-content").html(data.html_form);
+                        }
+                    }
+                });
+                return false;
+            };
+            /* Binding */
+
+            // Create book
+            $(".js-create-book").click(loadForm);
+            $("#modal-book").on("submit", ".js-book-create-form", saveForm);
+
+            // Update book
+            $("#book-table").on("click", ".js-update-book", loadForm);
+            $("#modal-book").on("submit", ".js-book-update-form", saveForm);
+            
+            // Delete book
+            $("#book-table").on("click", ".js-delete-book", loadForm);
+            $("#modal-book").on("submit", ".js-book-delete-form", saveForm);
+        });
+    </script>
+{% endblock %}
