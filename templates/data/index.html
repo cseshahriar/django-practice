@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Chart {% endblock %}
+
+{% block content %} 
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="page-header">Chart View</h1>
+                    {% if chart %}
+                        <img class="img-responsive" src="data:image/png;base64, {{ chart|safe}}" alt="">
+                    {% endif %} 
+            </div>
+        </div>
+    </div> 
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+    <script>
+      
+    </script>
+{% endblock %}
