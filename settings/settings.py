@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     'data_visualize.apps.DataVisualizeConfig',
     'import_export_app.apps.ImportExportAppConfig',
     'ajaxcrud.apps.AjaxcrudConfig',
+    'estates',
 
     # javaScript
     'dj_dropzone.apps.DjDropzoneConfig',
@@ -84,6 +85,8 @@ INSTALLED_APPS = [
     'py_threading.apps.PyThreadingConfig',
     'multistepform.apps.MultistepformConfig',
     'editorjsapp.apps.EditorjsappConfig',
+    
+    'silk',
 ]
 
 # dbbackup settings
@@ -111,6 +114,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'silk.middleware.SilkyMiddleware',
 ]
 
 ROOT_URLCONF = 'settings.urls'

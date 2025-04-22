@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Django Query Optimization - Defer, Only, and Exclude</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+      .pagination {
+          margin-top: 20px;
+          text-align: center;
+      }
+      .pagination a {
+          color: #333;
+          padding: 8px 16px;
+          text-decoration: none;
+          border: 1px solid #ddd;
+          margin: 0 4px;
+      }
+      .pagination a.active {
+          background-color: #4CAF50;
+          color: white;
+          border: 1px solid #4CAF50;
+      }
+      .pagination a:hover:not(.active) {
+          background-color: #ddd;
+      }
+  </style>
+
+  </head>
+  <body>
+    <div class="container">
+    <h1>Django Query Optimization - Defer, Only, and Exclude</h1>
+    
+    <table class="table table-stripped">
+      <thead>
+        <tr>
+          <th>Sl</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Location</th>
+          <td>Square Feet</td>
+          <td>Bedroom</td>
+          <td>Bathroom</td>
+          <td>Has Garage</td>
+          <td>Has Balcony</td>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for obj in properties %}
+        <tr>
+          <td>
+            {% if properties %}
+                {{ forloop.counter0|add:properties.start_index }}
+            {% else %}
+                {{ forloop.counter }}
+            {% endif %}
+        </td>
+          <td>{{ obj.name }}</td>
+          <td>{{ obj.property_type}} </td>
+          <td>{{ obj.location.city}} </td>
+          <td>{{ obj.square_feet}} </td>
+          <td>{{ obj.bedrooms}} </td>
+          <td>{{ obj.bathrooms}} </td>
+          <td></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="pagination">
+      <span class="step-links">
+          {% if properties.has_previous %}
+              <a href="?page=1">&laquo; First</a>
+              <a href="?page={{ properties.previous_page_number }}">Prev</a>
+          {% endif %}
+  
+          <span class="current">
+              Page {{ properties.number }} of {{ properties.paginator.num_pages }}.
+          </span>
+  
+          {% if properties.has_next %}
+              <a href="?page={{ properties.next_page_number }}">Next</a>
+              <a href="?page={{ properties.paginator.num_pages }}">Last &raquo;</a>
+          {% endif %}
+      </span>
+    </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
+</html>
