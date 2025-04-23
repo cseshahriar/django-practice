@@ -64,48 +64,48 @@
 
       <!-- pagination -->
       <div class="pagination">
-        <div class="entries-info mb-2">
-          Showing {{ page_obj.start_index }} to {{ page_obj.end_index }} of {{ total }} entries
+        <div class="entries-info mb-2" style="padding-right:50px">
+            Showing {{ page_obj.start_index }} to {{ page_obj.end_index }} of {{ total }} entries
         </div>
-      
+
         {% if page_obj.has_other_pages %}
-          <div class="step-links d-flex flex-wrap gap-1 align-items-center">
-      
+        <div class="step-links d-flex flex-wrap gap-1 align-items-center">
             {# First and Previous #}
             {% if page_obj.has_previous %}
-              <a href="?page=1" class="btn btn-outline-secondary btn-sm">First</a>
-              <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-secondary btn-sm">Previous</a>
+                <a href="?page=1" class="btn btn-outline-secondary btn-sm">First</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-secondary btn-sm">Previous</a>
             {% endif %}
-      
-            {# Current + Next 4 Pages #}
-            {% for i in page_obj.paginator.page_range %}
-              {% if i >= page_obj.number and i < page_obj.number|add:"5" %}
-                {% if i == page_obj.number %}
-                  <span class="btn btn-primary btn-sm active">{{ i }}</span>
-                {% else %}
-                  <a href="?page={{ i }}" class="btn btn-outline-secondary btn-sm">{{ i }}</a>
+            
+            {# Current Page #}
+            <span class="btn btn-primary btn-sm active">{{ page_obj.number }}</span>
+            
+            {# Next 2 Pages if they exist #}
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-secondary btn-sm">{{ page_obj.next_page_number }}</a>
+                {% if page_obj.next_page_number|add:1 <= page_obj.paginator.num_pages %}
+                    <a href="?page={{ page_obj.next_page_number|add:1 }}" class="btn btn-outline-secondary btn-sm">{{ page_obj.next_page_number|add:1 }}</a>
                 {% endif %}
-              {% endif %}
-            {% endfor %}
-      
-            {# Ellipsis if more pages after next 4 #}
-            {% if page_obj.number|add:"5" < page_obj.paginator.num_pages %}
-              <span class="btn btn-sm disabled">…</span>
-              <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-secondary btn-sm">{{ page_obj.paginator.num_pages }}</a>
             {% endif %}
-      
+            
+            {# Ellipsis if there are more pages after next 2 #}
+            {% if page_obj.number|add:3 < page_obj.paginator.num_pages %}
+                <span class="btn btn-sm disabled">...</span>
+            {% endif %}
+            
+            {# Last Page if not already shown #}
+            {% if page_obj.number|add:2 < page_obj.paginator.num_pages %}
+                <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-secondary btn-sm">{{ page_obj.paginator.num_pages }}</a>
+            {% endif %}
+            
             {# Next and Last #}
             {% if page_obj.has_next %}
-              <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-secondary btn-sm">Next</a>
-              <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-secondary btn-sm">Last</a>
+                <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-secondary btn-sm">Next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-secondary btn-sm">Last</a>
             {% endif %}
-      
-          </div>
+        </div>
         {% endif %}
-      </div>
-            
-            
+    </div>
   </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   </body>
 </html>
