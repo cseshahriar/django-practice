@@ -1,0 +1,407 @@
+2025-04-22 09:16:37,565 INFO autoreload 167394 136964936966144 Watching for file changes with StatReloader
+2025-04-22 11:34:33,676 INFO autoreload 254229 135303973715968 Watching for file changes with StatReloader
+2025-04-22 11:34:37,000 ERROR exception 254229 135303260014144 Invalid HTTP_HOST header: '192.168.8.28:8000'. You may need to add '192.168.8.28' to ALLOWED_HOSTS.
+2025-04-22 11:34:37,045 WARNING log 254229 135303260014144 Bad Request: /
+2025-04-22 11:34:37,314 ERROR exception 254229 135303249528384 Invalid HTTP_HOST header: '192.168.8.28:8000'. You may need to add '192.168.8.28' to ALLOWED_HOSTS.
+2025-04-22 11:34:37,335 WARNING log 254229 135303249528384 Bad Request: /favicon.ico
+2025-04-22 11:34:50,472 INFO autoreload 254229 135303973715968 /home/shosen/training/practical_django/settings/local_settings.py changed, reloading.
+2025-04-22 11:34:51,155 INFO autoreload 254461 136067830685696 Watching for file changes with StatReloader
+2025-04-22 11:34:53,272 WARNING log 254461 136067111978560 Not Found: /favicon.ico
+2025-04-22 11:35:03,412 WARNING log 254461 136067111978560 Not Found: /estates
+2025-04-22 11:35:12,656 INFO autoreload 254461 136067830685696 /home/shosen/training/practical_django/settings/local_settings.py changed, reloading.
+2025-04-22 11:35:13,383 INFO autoreload 254596 129010951053312 Watching for file changes with StatReloader
+2025-04-22 11:35:30,664 WARNING log 254596 129010304550464 Not Found: /estates
+2025-04-22 11:35:45,146 INFO autoreload 254596 129010951053312 /home/shosen/training/practical_django/estates/apps.py changed, reloading.
+2025-04-22 11:35:45,899 INFO autoreload 254802 139779155628032 Watching for file changes with StatReloader
+2025-04-22 11:36:03,319 INFO autoreload 254802 139779155628032 /home/shosen/training/practical_django/settings/settings.py changed, reloading.
+2025-04-22 11:36:04,019 INFO autoreload 254909 127254858809344 Watching for file changes with StatReloader
+2025-04-22 11:36:09,217 INFO autoreload 254909 127254858809344 /home/shosen/training/practical_django/settings/urls.py changed, reloading.
+2025-04-22 11:36:09,897 INFO autoreload 255006 129790360068096 Watching for file changes with StatReloader
+2025-04-22 11:36:15,386 WARNING log 255006 129789648176704 Not Found: /estates/
+2025-04-22 11:36:19,406 WARNING log 255006 129789648176704 Not Found: /estates/olny
+2025-04-22 11:36:34,394 WARNING log 255006 129789648176704 Not Found: /olny
+2025-04-22 11:36:38,266 WARNING log 255006 129789648176704 Not Found: /olny/
+2025-04-22 11:36:53,820 INFO autoreload 255006 129790360068096 /home/shosen/training/practical_django/settings/urls.py changed, reloading.
+2025-04-22 11:36:54,489 INFO autoreload 255233 128901918523392 Watching for file changes with StatReloader
+2025-04-22 11:36:58,622 INFO autoreload 255233 128901918523392 /home/shosen/training/practical_django/settings/urls.py changed, reloading.
+2025-04-22 11:36:59,302 INFO autoreload 255294 134211686846464 Watching for file changes with StatReloader
+2025-04-22 11:37:04,860 WARNING log 255294 134211040183872 Not Found: /estates/olny
+2025-04-22 11:37:13,841 WARNING log 255294 134211040183872 Not Found: /estates/
+2025-04-22 11:38:27,403 WARNING log 255294 134211040183872 Not Found: /silk
+2025-04-22 11:39:36,317 INFO autoreload 255294 134211686846464 /home/shosen/training/practical_django/settings/urls.py changed, reloading.
+2025-04-22 11:39:37,000 INFO autoreload 256452 133765287464960 Watching for file changes with StatReloader
+2025-04-22 11:41:19,158 INFO autoreload 256452 133765287464960 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:41:19,843 INFO autoreload 256847 130137305661440 Watching for file changes with StatReloader
+2025-04-22 11:41:29,038 INFO autoreload 256847 130137305661440 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:41:29,677 INFO autoreload 256968 125125544841216 Watching for file changes with StatReloader
+2025-04-22 11:41:44,991 INFO autoreload 256968 125125544841216 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:41:45,644 INFO autoreload 257060 139048445415424 Watching for file changes with StatReloader
+2025-04-22 11:42:15,188 INFO autoreload 257060 139048445415424 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:42:15,824 INFO autoreload 257163 124593573920768 Watching for file changes with StatReloader
+2025-04-22 11:42:39,284 INFO autoreload 257163 124593573920768 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:42:39,924 INFO autoreload 257322 136997200252928 Watching for file changes with StatReloader
+2025-04-22 11:42:43,473 ERROR log 257322 136996485858880 Internal Server Error: /estates/defer
+Traceback (most recent call last):
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/shosen/training/practical_django/estates/paginators.py", line 28, in __getitem__
+    raise TypeError
+TypeError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'CountlessPage' object has no attribute 'start_index'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'start_index'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shosen/training/practical_django/estates/views.py", line 34, in estate_property_defer
+    return render(request, template, context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/test/utils.py", line 100, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 211, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 312, in render
+    return nodelist.render(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 988, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 692, in resolve
+    arg_vals.append(arg.resolve(context))
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [start_index] in <Page 1>
+2025-04-22 11:42:54,366 INFO autoreload 257322 136997200252928 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:42:55,035 INFO autoreload 257417 129958096646144 Watching for file changes with StatReloader
+2025-04-22 11:43:34,772 INFO autoreload 257417 129958096646144 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:43:35,432 INFO autoreload 257632 138932934127616 Watching for file changes with StatReloader
+2025-04-22 11:44:27,469 INFO autoreload 257632 138932934127616 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:44:28,174 INFO autoreload 257817 127517030465536 Watching for file changes with StatReloader
+2025-04-22 11:44:31,325 INFO autoreload 257817 127517030465536 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:44:32,091 INFO autoreload 257868 129600189173760 Watching for file changes with StatReloader
+2025-04-22 11:45:01,731 INFO autoreload 257868 129600189173760 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:45:02,401 INFO autoreload 257989 127886806163456 Watching for file changes with StatReloader
+2025-04-22 11:45:12,669 INFO autoreload 257989 127886806163456 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:45:13,327 INFO autoreload 258073 124728664494080 Watching for file changes with StatReloader
+2025-04-22 11:45:16,491 INFO autoreload 258073 124728664494080 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:45:17,209 INFO autoreload 258123 137916302475264 Watching for file changes with StatReloader
+2025-04-22 11:45:30,634 ERROR log 258123 137915587888704 Internal Server Error: /estates/defer
+Traceback (most recent call last):
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shosen/training/practical_django/estates/views.py", line 24, in estate_property_defer
+    "properties": [obj.to_json() for obj in page_obj],
+  File "/home/shosen/training/practical_django/estates/views.py", line 24, in <listcomp>
+    "properties": [obj.to_json() for obj in page_obj],
+AttributeError: 'Property' object has no attribute 'to_json'
+2025-04-22 11:46:31,694 INFO autoreload 258123 137916302475264 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 11:46:32,399 INFO autoreload 258499 127277295841280 Watching for file changes with StatReloader
+2025-04-22 11:46:58,991 INFO autoreload 258499 127277295841280 /home/shosen/training/practical_django/estates/models.py changed, reloading.
+2025-04-22 11:46:59,450 INFO autoreload 258595 126342798508032 Watching for file changes with StatReloader
+2025-04-22 11:47:02,610 INFO autoreload 258595 126342798508032 /home/shosen/training/practical_django/estates/models.py changed, reloading.
+2025-04-22 11:47:03,143 INFO autoreload 258630 131863640440832 Watching for file changes with StatReloader
+2025-04-22 11:47:53,090 INFO autoreload 258630 131863640440832 /home/shosen/training/practical_django/estates/models.py changed, reloading.
+2025-04-22 11:47:53,785 INFO autoreload 258877 133048197189632 Watching for file changes with StatReloader
+2025-04-22 11:48:06,055 INFO autoreload 258877 133048197189632 /home/shosen/training/practical_django/estates/models.py changed, reloading.
+2025-04-22 11:48:06,732 INFO autoreload 258952 130220426268672 Watching for file changes with StatReloader
+2025-04-22 11:48:36,353 INFO autoreload 258952 130220426268672 /home/shosen/training/practical_django/estates/models.py changed, reloading.
+2025-04-22 11:48:37,009 INFO autoreload 259134 134537656254464 Watching for file changes with StatReloader
+2025-04-22 11:48:40,204 INFO autoreload 259134 134537656254464 /home/shosen/training/practical_django/estates/models.py changed, reloading.
+2025-04-22 11:48:40,884 INFO autoreload 259199 137910739193856 Watching for file changes with StatReloader
+2025-04-22 11:49:11,543 INFO autoreload 259199 137910739193856 /home/shosen/training/practical_django/estates/models.py changed, reloading.
+2025-04-22 11:49:12,226 INFO autoreload 259331 125618070339584 Watching for file changes with StatReloader
+2025-04-22 11:49:18,419 INFO autoreload 259331 125618070339584 /home/shosen/training/practical_django/estates/models.py changed, reloading.
+2025-04-22 11:49:19,115 INFO autoreload 259440 140553360879616 Watching for file changes with StatReloader
+2025-04-22 11:49:21,245 ERROR log 259440 140552647476800 Internal Server Error: /estates/defer
+Traceback (most recent call last):
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shosen/training/practical_django/estates/views.py", line 24, in estate_property_defer
+    "properties": [obj.to_json() for obj in page_obj],
+  File "/home/shosen/training/practical_django/estates/views.py", line 24, in <listcomp>
+    "properties": [obj.to_json() for obj in page_obj],
+  File "/home/shosen/training/practical_django/estates/models.py", line 40, in to_json
+    "description": self.price,
+AttributeError: 'Property' object has no attribute 'price'
+2025-04-22 11:49:25,511 INFO autoreload 259440 140553360879616 /home/shosen/training/practical_django/estates/models.py changed, reloading.
+2025-04-22 11:49:26,222 INFO autoreload 259546 137475589050368 Watching for file changes with StatReloader
+2025-04-22 11:49:35,476 INFO autoreload 259546 137475589050368 /home/shosen/training/practical_django/estates/models.py changed, reloading.
+2025-04-22 11:49:36,177 INFO autoreload 259608 134390883921920 Watching for file changes with StatReloader
+2025-04-22 11:49:38,015 ERROR log 259608 134390170519104 Internal Server Error: /estates/defer
+Traceback (most recent call last):
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: list indices must be integers or slices, not str
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'list' object has no attribute 'start_index'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'start_index'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shosen/training/practical_django/estates/views.py", line 28, in estate_property_defer
+    return render(request, template, context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/test/utils.py", line 100, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 211, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 312, in render
+    return nodelist.render(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 988, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 692, in resolve
+    arg_vals.append(arg.resolve(context))
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [start_index] in [{'id': 1, 'name': 'Series Residence', 'description': 'Total believe enter. Home late suggest brother few. Federal third public. All fight power effect check if black.', 'property_type': 'HOUSE', 'location': {'id': 21, 'city': 'West Alexaside', 'state': 'South Dakota', 'country': 'LB', 'zip_code': '70233'}, 'square_feet': 3511, 'bedrooms': 2, 'bathrooms': 1, 'has_balcony': False}, {'id': 2, 'name': 'Operation House', 'description': 'Whole image show decision. Majority food sea skill. Charge series plant mouth. Along free skill sell ten source present anything. Important Republican opportunity simply high college.', 'property_type': 'HOUSE', 'location': {'id': 31, 'city': 'Evanstown', 'state': 'Massachusetts', 'country': 'SE', 'zip_code': '58173'}, 'square_feet': 2955, 'bedrooms': 2, 'bathrooms': 3, 'has_balcony': False}, {'id': 3, 'name': 'Production Apartment', 'description': 'Site consider hear three. Middle thousand yet deep financial box purpose top. Old southern foot put catch. Although front name individual.', 'property_type': 'APARTMENT', 'location': {'id': 27, 'city': 'Matthewside', 'state': 'Alabama', 'country': 'LY', 'zip_code': '08736'}, 'square_feet': 4907, 'bedrooms': 4, 'bathrooms': 2, 'has_balcony': False}, {'id': 4, 'name': 'Blood Residence', 'description': 'Want staff somebody environmental. Pick tonight professor matter plan price moment. Car agency beyond candidate. I today such different good rule yes morning. Second case accept stay common minute enter. Degree catch group design scene education customer.', 'property_type': 'HOUSE', 'location': {'id': 15, 'city': 'Port Alexahaven', 'state': 'South Carolina', 'country': 'KZ', 'zip_code': '10072'}, 'square_feet': 555, 'bedrooms': 1, 'bathrooms': 3, 'has_balcony': False}, {'id': 5, 'name': 'Day Place', 'description': 'Back speech itself daughter enjoy. Pretty even vote say building. Anything action could physical federal student wind. Option herself read recent operation care purpose last. Boy share mind million stage prepare.', 'property_type': 'HOUSE', 'location': {'id': 29, 'city': 'North Maria', 'state': 'Massachusetts', 'country': 'CN', 'zip_code': '49004'}, 'square_feet': 3919, 'bedrooms': 4, 'bathrooms': 3, 'has_balcony': False}, {'id': 6, 'name': 'Same Residence', 'description': 'American happen along federal cell them. Woman two administration treat prove create rate. Upon growth rest policy far cause control. Team onto commercial. News mother office spend spend process she. Standard report open thought fly.', 'property_type': 'HOUSE', 'location': {'id': 30, 'city': 'Port Matthewchester', 'state': 'Utah', 'country': 'NZ', 'zip_code': '32216'}, 'square_feet': 3892, 'bedrooms': 2, 'bathrooms': 1, 'has_balcony': False}, {'id': 7, 'name': 'Somebody Place', 'description': 'Letter season risk hope. House cup rest knowledge your ask. Letter which thank star political role gun. Benefit huge memory color question we training. Hair anything enough structure hear order public operation. Water increase condition trouble.', 'property_type': 'TOWNHOUSE', 'location': {'id': 25, 'city': 'Port Michael', 'state': 'Arizona', 'country': 'EC', 'zip_code': '02227'}, 'square_feet': 1785, 'bedrooms': 3, 'bathrooms': 1, 'has_balcony': False}, {'id': 8, 'name': 'Character House', 'description': 'Modern report than apply somebody detail central. Federal treat maybe exactly place soon four. Apply service anyone work sign. Lead but avoid together rest others hope.', 'property_type': 'HOUSE', 'location': {'id': 75, 'city': 'Markmouth', 'state': 'Michigan', 'country': 'ME', 'zip_code': '40416'}, 'square_feet': 824, 'bedrooms': 4, 'bathrooms': 1, 'has_balcony': False}, {'id': 9, 'name': 'Also House', 'description': 'Hit skin both meet participant develop weight imagine. Though level son. Itself sea lot buy full recognize experience future. Suddenly trip most close trouble decide thought.', 'property_type': 'HOUSE', 'location': {'id': 45, 'city': 'Ramseychester', 'state': 'Tennessee', 'country': 'TV', 'zip_code': '84769'}, 'square_feet': 2432, 'bedrooms': 5, 'bathrooms': 3, 'has_balcony': False}, {'id': 10, 'name': 'Size House', 'description': 'Senior each fight history goal. Thus common theory some will. Control Mr view including interview human.', 'property_type': 'HOUSE', 'location': {'id': 75, 'city': 'Markmouth', 'state': 'Michigan', 'country': 'ME', 'zip_code': '40416'}, 'square_feet': 3994, 'bedrooms': 1, 'bathrooms': 2, 'has_balcony': False}, {'id': 11, 'name': 'Sometimes Home', 'description': 'American before work simple choice system move. Father want left join simply hit. Most consumer company research himself together night. Region why during rule himself against field computer. Wear top believe college.', 'property_type': 'HOUSE', 'location': {'id': 36, 'city': 'Port Jillfort', 'state': 'Nevada', 'country': 'MY', 'zip_code': '27271'}, 'square_feet': 4972, 'bedrooms': 3, 'bathrooms': 3, 'has_balcony': False}]
+2025-04-22 11:49:43,586 INFO autoreload 259608 134390883921920 /home/shosen/training/practical_django/estates/models.py changed, reloading.
+2025-04-22 11:49:44,294 INFO autoreload 259706 140030726623232 Watching for file changes with StatReloader
+2025-04-22 11:50:08,844 INFO autoreload 259706 140030726623232 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:50:09,572 INFO autoreload 259777 130290579095552 Watching for file changes with StatReloader
+2025-04-22 11:52:50,483 INFO autoreload 259777 130290579095552 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 11:52:51,173 INFO autoreload 260293 133712278900736 Watching for file changes with StatReloader
+2025-04-22 11:53:11,607 INFO autoreload 260293 133712278900736 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:53:12,307 INFO autoreload 260377 129386452176896 Watching for file changes with StatReloader
+2025-04-22 11:53:43,067 INFO autoreload 260377 129386452176896 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:53:43,717 INFO autoreload 260542 130596922896384 Watching for file changes with StatReloader
+2025-04-22 11:53:46,885 INFO autoreload 260542 130596922896384 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:53:47,546 INFO autoreload 260592 134710946369536 Watching for file changes with StatReloader
+2025-04-22 11:56:08,237 ERROR log 260592 134710231565888 Internal Server Error: /estates/defer
+Traceback (most recent call last):
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shosen/training/practical_django/estates/views.py", line 26, in estate_property_defer
+    return render(request, "estates/index.html", context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 814, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 449, in parse
+    raise self.error(token, e)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 447, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 662, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '-1"' from 'forloop.counter0|add:"{{ page_obj.start_index|add:"-1"'
+2025-04-22 11:56:24,742 ERROR log 260592 134710231565888 Internal Server Error: /estates/defer
+Traceback (most recent call last):
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shosen/training/practical_django/estates/views.py", line 26, in estate_property_defer
+    return render(request, "estates/index.html", context)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 814, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 449, in parse
+    raise self.error(token, e)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 447, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/template/base.py", line 662, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '-1"' from 'forloop.counter0|add:"{{ properties.start_index|add:"-1"'
+2025-04-22 11:57:34,906 INFO autoreload 260592 134710946369536 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:57:35,569 INFO autoreload 261472 128367440965632 Watching for file changes with StatReloader
+2025-04-22 11:58:38,898 INFO autoreload 261472 128367440965632 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:58:39,573 INFO autoreload 261749 131197225242624 Watching for file changes with StatReloader
+2025-04-22 11:58:41,686 INFO autoreload 261749 131197225242624 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:58:42,393 INFO autoreload 261797 137957292814336 Watching for file changes with StatReloader
+2025-04-22 11:59:00,096 WARNING log 261797 137956645930560 Not Found: /favicon.ico
+2025-04-22 11:59:39,620 INFO autoreload 261797 137957292814336 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:59:40,319 INFO autoreload 262048 133911997796352 Watching for file changes with StatReloader
+2025-04-22 11:59:46,493 INFO autoreload 262048 133911997796352 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 11:59:47,222 INFO autoreload 262119 140440769888256 Watching for file changes with StatReloader
+2025-04-22 12:00:19,964 INFO autoreload 262119 140440769888256 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 12:00:20,623 INFO autoreload 262365 132782926307328 Watching for file changes with StatReloader
+2025-04-22 12:00:34,499 ERROR log 262365 132782279886400 Internal Server Error: /estates/defer
+Traceback (most recent call last):
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/shosen/training/practical_django/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shosen/training/practical_django/estates/views.py", line 22, in estate_property_defer
+    "start_index": page_obj.start_index(),  # Add this!
+AttributeError: 'CountlessPage' object has no attribute 'start_index'
+2025-04-22 12:00:51,389 INFO autoreload 262365 132782926307328 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:00:52,080 INFO autoreload 262498 131857339564032 Watching for file changes with StatReloader
+2025-04-22 12:01:25,784 INFO autoreload 262498 131857339564032 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:01:26,453 INFO autoreload 262643 131517883375616 Watching for file changes with StatReloader
+2025-04-22 12:01:29,601 INFO autoreload 262643 131517883375616 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:01:30,328 INFO autoreload 262684 130192523390976 Watching for file changes with StatReloader
+2025-04-22 12:01:50,761 INFO autoreload 262684 130192523390976 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:01:51,461 INFO autoreload 262805 136802102149120 Watching for file changes with StatReloader
+2025-04-22 12:02:29,154 INFO autoreload 262805 136802102149120 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:02:29,832 INFO autoreload 262979 137322250063872 Watching for file changes with StatReloader
+2025-04-22 12:02:33,960 INFO autoreload 262979 137322250063872 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:02:34,600 INFO autoreload 263034 124839585943552 Watching for file changes with StatReloader
+2025-04-22 12:02:37,733 INFO autoreload 263034 124839585943552 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:02:38,424 INFO autoreload 263075 123825517830144 Watching for file changes with StatReloader
+2025-04-22 12:02:52,758 INFO autoreload 263075 123825517830144 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 12:02:53,442 INFO autoreload 263167 132091650658304 Watching for file changes with StatReloader
+2025-04-22 12:04:42,635 INFO autoreload 263167 132091650658304 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:04:43,281 INFO autoreload 263526 138485844705280 Watching for file changes with StatReloader
+2025-04-22 12:04:46,434 INFO autoreload 263526 138485844705280 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:04:47,149 INFO autoreload 263567 123463484616704 Watching for file changes with StatReloader
+2025-04-22 12:05:01,457 INFO autoreload 263567 123463484616704 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:05:02,156 INFO autoreload 263685 133921000239104 Watching for file changes with StatReloader
+2025-04-22 12:05:26,707 INFO autoreload 263685 133921000239104 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:05:27,481 INFO autoreload 263810 134595523481600 Watching for file changes with StatReloader
+2025-04-22 12:05:59,218 INFO autoreload 263810 134595523481600 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:05:59,875 INFO autoreload 263905 139994504650752 Watching for file changes with StatReloader
+2025-04-22 12:06:01,976 INFO autoreload 263905 139994504650752 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:06:02,666 INFO autoreload 263949 125768305172480 Watching for file changes with StatReloader
+2025-04-22 12:06:11,897 INFO autoreload 263949 125768305172480 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:06:12,533 INFO autoreload 264003 133657674141696 Watching for file changes with StatReloader
+2025-04-22 12:07:51,453 INFO autoreload 264003 133657674141696 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:07:52,196 INFO autoreload 264368 129258331549696 Watching for file changes with StatReloader
+2025-04-22 12:07:57,438 INFO autoreload 264368 129258331549696 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:07:58,171 INFO autoreload 264443 135984955076608 Watching for file changes with StatReloader
+2025-04-22 12:08:08,447 INFO autoreload 264443 135984955076608 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:08:09,144 INFO autoreload 264556 136081229164544 Watching for file changes with StatReloader
+2025-04-22 12:08:28,527 INFO autoreload 264556 136081229164544 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:08:29,159 INFO autoreload 264654 137694133145600 Watching for file changes with StatReloader
+2025-04-22 12:08:54,635 INFO autoreload 264654 137694133145600 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:08:55,321 INFO autoreload 264744 126744003256320 Watching for file changes with StatReloader
+2025-04-22 12:09:06,898 INFO autoreload 264744 126744003256320 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:09:07,638 INFO autoreload 264879 137579943329792 Watching for file changes with StatReloader
+2025-04-22 12:09:14,825 INFO autoreload 264879 137579943329792 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:09:15,592 INFO autoreload 265057 129046721708032 Watching for file changes with StatReloader
+2025-04-22 12:09:26,852 INFO autoreload 265057 129046721708032 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:09:27,535 INFO autoreload 265121 130769448558592 Watching for file changes with StatReloader
+2025-04-22 12:10:05,316 INFO autoreload 265121 130769448558592 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 12:10:06,057 INFO autoreload 265235 140200901222400 Watching for file changes with StatReloader
+2025-04-22 12:10:23,506 INFO autoreload 265235 140200901222400 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 12:10:24,200 INFO autoreload 265376 128530420813824 Watching for file changes with StatReloader
+2025-04-22 12:11:23,626 INFO autoreload 265376 128530420813824 /home/shosen/training/practical_django/estates/views.py changed, reloading.
+2025-04-22 12:11:24,345 INFO autoreload 265717 139351644184576 Watching for file changes with StatReloader
+2025-04-22 12:11:26,524 INFO autoreload 265717 139351644184576 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:11:27,166 INFO autoreload 265753 127482878033920 Watching for file changes with StatReloader
+2025-04-22 12:11:47,595 INFO autoreload 265753 127482878033920 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:11:48,272 INFO autoreload 265820 128171441295360 Watching for file changes with StatReloader
+2025-04-22 12:12:54,512 INFO autoreload 265820 128171441295360 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:12:55,175 INFO autoreload 266057 140342101053440 Watching for file changes with StatReloader
+2025-04-22 12:14:28,880 INFO autoreload 266057 140342101053440 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:14:29,564 INFO autoreload 266309 138944087900160 Watching for file changes with StatReloader
+2025-04-22 12:15:36,032 INFO autoreload 266309 138944087900160 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.
+2025-04-22 12:15:36,699 INFO autoreload 266596 135077367414784 Watching for file changes with StatReloader
+2025-04-22 12:16:06,644 INFO autoreload 266596 135077367414784 /home/shosen/training/practical_django/estates/paginators.py changed, reloading.

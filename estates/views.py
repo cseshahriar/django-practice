@@ -1,36 +1,28 @@
 from django.shortcuts import render
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from estates.paginators import CountlessPage, CountlessPaginator
 from django.http import JsonResponse
 
 from estates.models import Location, Property  # noqa
 
 
 def estate_property_defer(request):
-    property_list = Property.objects.select_related('location').defer(  # column level
+    property_list = Property.objects.select_related('location').defer(
         "description",
-        'location__state',  # exclude from sql
-        'location__country',  # exclude from sql
-        'location__zip_code',  # exclude from sql
+        'location__state',
+        'location__country',
+        'location__zip_code',
     )
 
-    # Paginate by 10 per page
-    paginator = Paginator(property_list, 10)
-    page = request.GET.get('page')
-
-    try:
-        properties = paginator.page(page)
-    except PageNotAnInteger:
-        # If page is not an integer, deliver first page
-        properties = paginator.page(1)
-    except EmptyPage:
-        # If page is out of range, deliver last page
-        properties = paginator.page(paginator.num_pages)
+    paginator = CountlessPaginator(property_list, 10)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
 
     context = {
-        'properties': properties
+        "page_obj": page_obj,
+        "start_index": page_obj.start_index(),
+        "properties": [obj.to_json() for obj in page_obj],
     }
-    template = "estates/index.html"
-    return render(request, template, context)
+    return render(request, "estates/index.html", context)
 
 
 def estate_property_only(request):

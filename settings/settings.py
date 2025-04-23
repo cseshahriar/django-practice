@@ -14,6 +14,7 @@ import os
 from settings.local_settings import (
    ALLOWED_HOSTS, INTERNAL_IPS, DEBUG
 )
+from .logger import LOGGING
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -87,6 +88,7 @@ INSTALLED_APPS = [
     'editorjsapp.apps.EditorjsappConfig',
     
     'silk',
+    'nplusone.ext.django',
 ]
 
 # dbbackup settings
@@ -115,6 +117,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'silk.middleware.SilkyMiddleware',
+    'nplusone.ext.django.NPlusOneMiddleware',
 ]
 
 ROOT_URLCONF = 'settings.urls'
@@ -219,3 +222,5 @@ DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.redirects.RedirectsPanel',
     'debug_toolbar.panels.profiling.ProfilingPanel',
 ]
+
+LOGGING = LOGGING  # logging.py

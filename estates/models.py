@@ -32,3 +32,22 @@ class Property(models.Model):
 
     def __str__(self):
         return self.name
+
+    def to_json(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "description": self.description,
+            "property_type": self.property_type,
+            "location": {
+                "id": self.location.id,
+                "city": self.location.city,
+                "state": self.location.state,
+                "country": self.location.country,
+                "zip_code": self.location.zip_code
+            },
+            'square_feet': self.square_feet,
+            'bedrooms': self.bedrooms,
+            'bathrooms': self.bathrooms,
+            'has_balcony': self.has_balcony
+        }

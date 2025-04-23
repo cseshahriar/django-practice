@@ -17,7 +17,7 @@ urlpatterns = [
     path('', include('djs.urls')),
     path('', include('bulkcrud.urls')),
     path('', include('import_export_app.urls')),
-    path('', include('estates.urls')),
+    path('estates/', include('estates.urls')),
     path('events/', include('events.urls')),
     path('imgcrop/', include('imgcrop.urls')),
     path('thread/', include('py_threading.urls')),
@@ -26,4 +26,5 @@ urlpatterns = [
     path('', include('ajaxcrud.urls')),
     path('', include('data_visualize.urls')),
     path('__debug__/', include(debug_toolbar.urls)),
+    path('silk/', include('silk.urls', namespace='silk'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
