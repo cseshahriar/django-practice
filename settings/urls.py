@@ -18,6 +18,7 @@ urlpatterns = [
     path('', include('bulkcrud.urls')),
     path('', include('import_export_app.urls')),
     path('estates/', include('estates.urls')),
+    path('report/', include('report.urls')),
     path('events/', include('events.urls')),
     path('imgcrop/', include('imgcrop.urls')),
     path('thread/', include('py_threading.urls')),

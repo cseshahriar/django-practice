@@ -77,6 +77,7 @@ INSTALLED_APPS = [
     'import_export_app.apps.ImportExportAppConfig',
     'ajaxcrud.apps.AjaxcrudConfig',
     'estates',
+    'report',
 
     # javaScript
     'dj_dropzone.apps.DjDropzoneConfig',
@@ -224,3 +225,9 @@ DEBUG_TOOLBAR_PANELS = [
 ]
 
 LOGGING = LOGGING  # logging.py
+
+
+CELERY_BROKER_URL = os.environ.get("CELERY_BROKER", "redis://redis:6379/0")
+CELERY_RESULT_BACKEND = os.environ.get("CELERY_BROKER", "redis://redis:6379/0")
+CELERY_RESULT_EXTENDED = True
+CELERY_TASK_TRACK_STARTED = True
