@@ -18,6 +18,7 @@ def estate_property_defer(request):
     page_obj = paginator.get_page(page_number)
 
     context = {
+        "total": property_list.count(),
         "page_obj": page_obj,
         "start_index": page_obj.start_index(),
         "properties": [obj.to_json() for obj in page_obj],

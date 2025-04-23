@@ -40,6 +40,11 @@ class CountlessPage:
     def end_index(self):
         return self.start_index() + len(self.object_list) - 1
 
+    def total_pages(self):
+        if self.total_count is None:
+            return None
+        return (self.total_count + self.page_size - 1) // self.page_size
+
 
 class CountlessPaginator:
     def __init__(self, object_list, per_page) -> None:
@@ -68,7 +73,6 @@ class CountlessPaginator:
         number = self.validate_number(number)
         bottom = (number - 1) * self.per_page
         top = bottom + self.per_page
-        print(f"{'*' * 10} number: {number} bottom {bottom} top {top}\n")
         return CountlessPage(
             self.object_list[bottom:top + 1],  # fetch one extra to check has_next
             number,

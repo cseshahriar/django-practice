@@ -62,25 +62,49 @@
         </tbody>
       </table>
 
+      <!-- pagination -->
       <div class="pagination">
+        <div class="entries-info mb-2">
+          Showing {{ page_obj.start_index }} to {{ page_obj.end_index }} of {{ total }} entries
+        </div>
+      
         {% if page_obj.has_other_pages %}
-          <div class="step-links">
+          <div class="step-links d-flex flex-wrap gap-1 align-items-center">
+      
+            {# First and Previous #}
             {% if page_obj.has_previous %}
-              <a href="?page=1">&laquo; First</a>
-              <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+              <a href="?page=1" class="btn btn-outline-secondary btn-sm">First</a>
+              <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-secondary btn-sm">Previous</a>
             {% endif %}
       
-            <span class="current">
-              Page {{ page_obj.number }}
-            </span>
+            {# Current + Next 4 Pages #}
+            {% for i in page_obj.paginator.page_range %}
+              {% if i >= page_obj.number and i < page_obj.number|add:"5" %}
+                {% if i == page_obj.number %}
+                  <span class="btn btn-primary btn-sm active">{{ i }}</span>
+                {% else %}
+                  <a href="?page={{ i }}" class="btn btn-outline-secondary btn-sm">{{ i }}</a>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
       
+            {# Ellipsis if more pages after next 4 #}
+            {% if page_obj.number|add:"5" < page_obj.paginator.num_pages %}
+              <span class="btn btn-sm disabled">…</span>
+              <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-secondary btn-sm">{{ page_obj.paginator.num_pages }}</a>
+            {% endif %}
+      
+            {# Next and Last #}
             {% if page_obj.has_next %}
-              <a href="?page={{ page_obj.next_page_number }}">Next</a>
+              <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-secondary btn-sm">Next</a>
+              <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-secondary btn-sm">Last</a>
             {% endif %}
+      
           </div>
         {% endif %}
       </div>
-      
+            
+            
   </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   </body>
